@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Header } from "@/components/layout/header"
 import { Hero } from "@/components/sections/hero"
 import { FeaturedWork } from "@/components/sections/featured-work"
@@ -17,5 +18,14 @@ export default function Home() {
       </main>
       <Footer />
     </div>
+=======
+import { Hero } from "@/components/sections/hero" 
+
+export default function Home() {
+  return (
+    <main className="flex-1">
+      <Hero />
+    </main>
+>>>>>>> 699073b7ba59fa2b248817dbeb70551148cffede
   )
 }

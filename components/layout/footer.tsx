@@ -2,6 +2,7 @@ import Link from "next/link"
 
 export function Footer() {
   return (
+<<<<<<< HEAD
     <footer className="bg-black text-white py-12 px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -47,8 +48,41 @@ export function Footer() {
               </Link>
             </div>
           </div>
+=======
+    <footer className="border-t bg-background">
+      <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
+        <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+          <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+            Built by{" "}
+            <Link
+              href="#"
+              className="font-medium underline underline-offset-4"
+            >
+              Identia Studio
+            </Link>
+            . All rights reserved.
+          </p>
+        </div>
+        <div className="flex items-center space-x-4">
+          <Link
+            href="#"
+            className="text-sm text-muted-foreground hover:text-foreground"
+          >
+            Privacy
+          </Link>
+          <Link
+            href="#"
+            className="text-sm text-muted-foreground hover:text-foreground"
+          >
+            Terms
+          </Link>
+>>>>>>> 699073b7ba59fa2b248817dbeb70551148cffede
         </div>
       </div>
     </footer>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 699073b7ba59fa2b248817dbeb70551148cffede

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Navbar10 } from "@/components/ui/navbar-10";
 
 export const metadata: Metadata = {
   title: "Identia Studio - Modern Web Development",
@@ -24,6 +25,11 @@ export default function RootLayout({
       <body
         className="antialiased bg-black text-white"
       >
+        <Navbar10 
+          userName="Identia Studio"
+          userEmail="hello@identiastudio.com"
+          upgradeText="Get Started"
+        />
         {children}
       </body>
     </html>
