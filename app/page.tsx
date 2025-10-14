@@ -1,4 +1,3 @@
-import { Header } from "@/components/layout/header"
 import { Hero } from "@/components/sections/hero"
 import { FeaturedWork } from "@/components/sections/featured-work"
 import { CTASection } from "@/components/sections/cta-section"
@@ -8,7 +7,6 @@ import { Footer } from "@/components/layout/footer"
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       <main>
         <Hero />
         <FeaturedWork />

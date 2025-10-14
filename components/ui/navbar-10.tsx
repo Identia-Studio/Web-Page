@@ -25,6 +25,9 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+import { LanguageToggle } from '@/components/ui/language-toggle';
+import { useLanguage } from '@/contexts/language-context';
+import { QuoteModal } from '@/components/ui/quote-modal';
 
 // Simple logo component for the navbar
 const Logo = (props: React.SVGAttributes<SVGElement>) => {
@@ -180,10 +183,10 @@ export interface Navbar10Props extends React.HTMLAttributes<HTMLElement> {
 }
 
 // Default navigation links with icons
-const defaultNavigationLinks: Navbar10NavItem[] = [
-  { href: '#', label: 'Home', icon: HouseIcon, active: true },
-  { href: '#', label: 'Inbox', icon: InboxIcon },
-  { href: '#', label: 'Insights', icon: ZapIcon },
+const getDefaultNavigationLinks = (isSpanish: boolean): Navbar10NavItem[] => [
+  { href: '#', label: isSpanish ? 'Inicio' : 'Home', icon: HouseIcon, active: true },
+  { href: '#', label: isSpanish ? 'Bandeja' : 'Inbox', icon: InboxIcon },
+  { href: '#', label: isSpanish ? 'Análisis' : 'Insights', icon: ZapIcon },
 ];
 
 export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
@@ -191,7 +194,7 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
     {
       className,
       logo = <Logo />,
-      navigationLinks = defaultNavigationLinks,
+      navigationLinks,
       upgradeText = 'Upgrade',
       userName = 'John Doe',
       userEmail = 'john@example.com',
@@ -205,6 +208,10 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
   ) => {
     const [isMobile, setIsMobile] = useState(false);
     const containerRef = useRef<HTMLElement>(null);
+    const { isSpanish } = useLanguage();
+    
+    // Use provided navigation links or default ones based on language
+    const currentNavigationLinks = navigationLinks || getDefaultNavigationLinks(isSpanish);
 
     useEffect(() => {
       const checkWidth = () => {
@@ -245,136 +252,42 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
         {...props}
       >
         <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4">
-          {/* Left side */}
-          <div className="flex flex-1 items-center gap-2">
-            {/* Mobile menu trigger */}
-            {isMobile && (
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    className="group h-8 w-8 hover:bg-accent hover:text-accent-foreground"
-                    variant="ghost"
-                    size="icon"
-                  >
-                    <HamburgerIcon />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent align="start" className="w-64 p-1">
-                  <NavigationMenu className="max-w-none">
-                    <NavigationMenuList className="flex-col items-start gap-0">
-                      {navigationLinks.map((link, index) => {
-                        const Icon = link.icon;
-                        return (
-                          <NavigationMenuItem key={index} className="w-full">
-                            <button
-                              onClick={(e) => {
-                                e.preventDefault();
-                                if (onNavItemClick && link.href) {
-                                  onNavItemClick(link.href);
-                                } else {
-                                  console.log('Navigate to:', link.href);
-                                }
-                              }}
-                              className={cn(
-                                'flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline',
-                                link.active && 'bg-accent text-accent-foreground'
-                              )}
-                            >
-                              <Icon
-                                size={16}
-                                className="text-muted-foreground/80"
-                                aria-hidden={true}
-                              />
-                              <span>{link.label}</span>
-                            </button>
-                          </NavigationMenuItem>
-                        );
-                      })}
-                    </NavigationMenuList>
-                  </NavigationMenu>
-                </PopoverContent>
-              </Popover>
-            )}
-
-            {!isMobile && (
-              <NavigationMenu className="flex">
-                <NavigationMenuList className="gap-2">
-                  {navigationLinks.map((link, index) => {
-                    const Icon = link.icon;
-                    return (
-                      <NavigationMenuItem key={index}>
-                        <NavigationMenuLink
-                          href={link.href}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            if (onNavItemClick && link.href) {
-                              onNavItemClick(link.href);
-                            } else {
-                              console.log('Navigate to:', link.href);
-                            }
-                          }}
-                          className={cn(
-                            'text-foreground hover:text-primary flex items-center gap-2 py-1.5 font-medium transition-colors cursor-pointer group inline-flex h-10 w-max justify-center rounded-md bg-background px-4 py-2 text-sm focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50',
-                            link.active && 'text-primary'
-                          )}
-                          data-active={link.active}
-                        >
-                          <Icon
-                            size={16}
-                            className="text-muted-foreground/80"
-                            aria-hidden={true}
-                          />
-                          <span>{link.label}</span>
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                    );
-                  })}
-                </NavigationMenuList>
-              </NavigationMenu>
-            )}
+          {/* Left side - Our Work section */}
+          <div className="flex flex-1 items-center gap-6">
+            <span className="text-white font-medium">
+              {isSpanish ? 'Nuestro Trabajo' : 'Our Work'}
+            </span>
+            <div className="flex items-center gap-2">
+              <button className="bg-white text-black px-3 py-1 rounded-full text-sm font-medium">
+                {isSpanish ? 'MARCA' : 'BRAND'}
+              </button>
+              <button className="border border-white text-white px-3 py-1 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-colors">
+                LOGOS
+              </button>
+              <button className="border border-white text-white px-3 py-1 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-colors">
+                {isSpanish ? 'TODOS' : 'ALL'}
+              </button>
+            </div>
           </div>
 
           {/* Middle side: Logo */}
           <div className="flex items-center">
-            <button
-              onClick={(e) => e.preventDefault()}
-              className="text-primary hover:text-primary/90 transition-colors cursor-pointer"
-            >
-              {logo}
-            </button>
+            <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+              IS
+            </div>
           </div>
+          <div className="flex flex-1 items-center justify-end gap-6">
+            <div className="flex items-center gap-2">
+              <span className="text-white font-medium">
+                {isSpanish ? 'Hablemos' : "Let's Chat"}
+              </span>
+            </div>
+            
+            {/* Language Toggle */}
+            <LanguageToggle />
 
-          {/* Right side: Actions */}
-          <div className="flex flex-1 items-center justify-end gap-4">
-            {/* User menu */}
-            <UserMenu
-              userName={userName}
-              userEmail={userEmail}
-              userAvatar={userAvatar}
-              onItemClick={onUserItemClick}
-            />
-
-            {/* Upgrade button */}
-            <Button
-              size="sm"
-              className="text-sm"
-              onClick={(e) => {
-                e.preventDefault();
-                if (onUpgradeClick) {
-                  onUpgradeClick();
-                } else {
-                  console.log('Upgrade clicked');
-                }
-              }}
-            >
-              <SparklesIcon
-                className="opacity-60 mr-1"
-                size={16}
-                aria-hidden={true}
-              />
-              <span className="hidden sm:inline">{upgradeText}</span>
-              <span className="sm:hidden sr-only">{upgradeText}</span>
-            </Button>
+            {/* Quote Modal */}
+            <QuoteModal />
           </div>
         </div>
       </header>
