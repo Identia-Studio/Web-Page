@@ -2,29 +2,23 @@
 
 import * as React from 'react';
 import { useEffect, useState, useRef } from 'react';
-import { HouseIcon, InboxIcon, SparklesIcon, ZapIcon, ChevronDownIcon } from 'lucide-react';
+import { motion } from "motion/react"
+// import { HouseIcon, InboxIcon, Satellite, ZapIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from '@/components/ui/navigation-menu';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+// import {
+//   NavigationMenu,
+//   NavigationMenuItem,
+//   NavigationMenuLink,
+//   NavigationMenuList,
+// } from '@/components/ui/navigation-menu';
+// import {
+//   Popover,
+//   PopoverContent,
+//   PopoverTrigger,
+// } from '@/components/ui/popover';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+import ContactModal from '../sections/shared/contact-modal';
 
 // Simple logo component for the navbar
 const Logo = (props: React.SVGAttributes<SVGElement>) => {
@@ -84,78 +78,55 @@ const HamburgerIcon = ({ className, ...props }: React.SVGAttributes<SVGElement>)
 
 // User Menu Component
 const UserMenu = ({
-  userName = 'John Doe',
-  userEmail = 'john@example.com',
   userAvatar,
-  onItemClick
+  onClick
 }: {
-  userName?: string;
-  userEmail?: string;
   userAvatar?: string;
-  onItemClick?: (item: string) => void;
+  onClick?: () => void;
 }) => (
-  <DropdownMenu>
-    <DropdownMenuTrigger asChild>
-      <Button variant="ghost" className="h-9 px-2 py-0 hover:bg-accent hover:text-accent-foreground">
+  <Button variant="ghost" className="h-9 px-2 py-0 hover:bg-accent hover:text-accent-foreground cursor-pointer" onClick={onClick}>
+    <motion.div
+      className="flex -space-x-2"
+    >
+      <motion.div
+        className="*:data-[slot=avatar]:ring-background *:data-[slot=avatar]:ring-2"
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{ repeat: Infinity, repeatDelay: 8, duration: .5, ease: "easeInOut"}}
+      >
         <Avatar className="h-7 w-7">
-          <AvatarImage src={userAvatar} alt={userName} />
+          <AvatarImage src={userAvatar} alt={'Jorge Andrade'} />
           <AvatarFallback className="text-xs">
-            {userName.split(' ').map(n => n[0]).join('')}
+           JA
           </AvatarFallback>
         </Avatar>
-        <ChevronDownIcon className="h-3 w-3 ml-1" />
-        <span className="sr-only">User menu</span>
-      </Button>
-    </DropdownMenuTrigger>
-    <DropdownMenuContent align="end" className="w-56">
-      <DropdownMenuLabel>
-        <div className="flex flex-col space-y-1">
-          <p className="text-sm font-medium leading-none">{userName}</p>
-          <p className="text-xs leading-none text-muted-foreground">
-            {userEmail}
-          </p>
-        </div>
-      </DropdownMenuLabel>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem onClick={() => {
-        if (onItemClick) {
-          onItemClick('profile');
-        } else {
-          console.log('User menu item: profile');
-        }
-      }}>
-        Profile
-      </DropdownMenuItem>
-      <DropdownMenuItem onClick={() => {
-        if (onItemClick) {
-          onItemClick('settings');
-        } else {
-          console.log('User menu item: settings');
-        }
-      }}>
-        Settings
-      </DropdownMenuItem>
-      <DropdownMenuItem onClick={() => {
-        if (onItemClick) {
-          onItemClick('billing');
-        } else {
-          console.log('User menu item: billing');
-        }
-      }}>
-        Billing
-      </DropdownMenuItem>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem onClick={() => {
-        if (onItemClick) {
-          onItemClick('logout');
-        } else {
-          console.log('User menu item: logout');
-        }
-      }}>
-        Log out
-      </DropdownMenuItem>
-    </DropdownMenuContent>
-  </DropdownMenu>
+      </motion.div>
+      <motion.div
+        className="*:data-[slot=avatar]:ring-background *:data-[slot=avatar]:ring-2"
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{ repeat: Infinity, repeatDelay: 8, duration: .5, ease: "easeInOut"}}
+      >
+        <Avatar className="h-7 w-7">
+          <AvatarImage src={userAvatar} alt={'Victor Andrade'} />
+          <AvatarFallback className="text-xs">
+            VA
+          </AvatarFallback>
+        </Avatar>
+      </motion.div>
+      <motion.div
+        className="*:data-[slot=avatar]:ring-background *:data-[slot=avatar]:ring-2"
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{ repeat: Infinity, repeatDelay: 8, duration: .5, ease: "easeInOut"}}
+      >
+        <Avatar className="h-7 w-7">
+          <AvatarImage src={userAvatar} alt={'Mar Pérez'} />
+          <AvatarFallback className="text-xs">
+            MP
+          </AvatarFallback>
+        </Avatar>
+      </motion.div>
+    </motion.div>
+    <span className="sr-only">User menu</span>
+  </Button>
 );
 
 // Types
@@ -171,33 +142,27 @@ export interface Navbar10Props extends React.HTMLAttributes<HTMLElement> {
   logoHref?: string;
   navigationLinks?: Navbar10NavItem[];
   upgradeText?: string;
-  userName?: string;
-  userEmail?: string;
   userAvatar?: string;
   onNavItemClick?: (href: string) => void;
   onUpgradeClick?: () => void;
-  onUserItemClick?: (item: string) => void;
+  onUserItemClick?: () => void;
 }
 
-// Default navigation links with icons
-const defaultNavigationLinks: Navbar10NavItem[] = [
-  { href: '#', label: 'Home', icon: HouseIcon, active: true },
-  { href: '#', label: 'Inbox', icon: InboxIcon },
-  { href: '#', label: 'Insights', icon: ZapIcon },
-];
+// // Default navigation links with icons
+// const defaultNavigationLinks: Navbar10NavItem[] = [
+//   { href: '#', label: 'Home', icon: HouseIcon, active: true },
+//   { href: '#', label: 'Inbox', icon: InboxIcon },
+//   { href: '#', label: 'Insights', icon: ZapIcon },
+// ];
 
 export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
   (
     {
       className,
       logo = <Logo />,
-      navigationLinks = defaultNavigationLinks,
-      upgradeText = 'Upgrade',
-      userName = 'John Doe',
-      userEmail = 'john@example.com',
+      // navigationLinks = defaultNavigationLinks,
       userAvatar,
-      onNavItemClick,
-      onUpgradeClick,
+      // onNavItemClick,
       onUserItemClick,
       ...props
     },
@@ -248,7 +213,7 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
           {/* Left side */}
           <div className="flex flex-1 items-center gap-2">
             {/* Mobile menu trigger */}
-            {isMobile && (
+            {/* {isMobile && (
               <Popover>
                 <PopoverTrigger asChild>
                   <Button
@@ -259,7 +224,7 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
                     <HamburgerIcon />
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent align="start" className="w-64 p-1">
+                <PopoverContent align="start" className="w-64 p-1 bg-[#181818]" >
                   <NavigationMenu className="max-w-none">
                     <NavigationMenuList className="flex-col items-start gap-0">
                       {navigationLinks.map((link, index) => {
@@ -300,7 +265,6 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
               <NavigationMenu className="flex">
                 <NavigationMenuList className="gap-2">
                   {navigationLinks.map((link, index) => {
-                    const Icon = link.icon;
                     return (
                       <NavigationMenuItem key={index}>
                         <NavigationMenuLink
@@ -314,16 +278,11 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
                             }
                           }}
                           className={cn(
-                            'text-foreground hover:text-primary flex items-center gap-2 py-1.5 font-medium transition-colors cursor-pointer group inline-flex h-10 w-max justify-center rounded-md bg-background px-4 py-2 text-sm focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50',
+                            'text-foreground hover:text-primary flex items-center gap-2 py-1 font-medium transition-colors cursor-pointer group inline-flex w-max justify-center rounded-md bg-background px-4 py-1 text-sm focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 rounded-full',
                             link.active && 'text-primary'
                           )}
                           data-active={link.active}
                         >
-                          <Icon
-                            size={16}
-                            className="text-muted-foreground/80"
-                            aria-hidden={true}
-                          />
                           <span>{link.label}</span>
                         </NavigationMenuLink>
                       </NavigationMenuItem>
@@ -331,7 +290,7 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
                   })}
                 </NavigationMenuList>
               </NavigationMenu>
-            )}
+            )} */}
           </div>
 
           {/* Middle side: Logo */}
@@ -348,33 +307,12 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
           <div className="flex flex-1 items-center justify-end gap-4">
             {/* User menu */}
             <UserMenu
-              userName={userName}
-              userEmail={userEmail}
               userAvatar={userAvatar}
-              onItemClick={onUserItemClick}
+              onClick={onUserItemClick}
             />
 
             {/* Upgrade button */}
-            <Button
-              size="sm"
-              className="text-sm"
-              onClick={(e) => {
-                e.preventDefault();
-                if (onUpgradeClick) {
-                  onUpgradeClick();
-                } else {
-                  console.log('Upgrade clicked');
-                }
-              }}
-            >
-              <SparklesIcon
-                className="opacity-60 mr-1"
-                size={16}
-                aria-hidden={true}
-              />
-              <span className="hidden sm:inline">{upgradeText}</span>
-              <span className="sm:hidden sr-only">{upgradeText}</span>
-            </Button>
+            <ContactModal />
           </div>
         </div>
       </header>

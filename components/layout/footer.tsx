@@ -1,54 +1,68 @@
+import Image from "next/image";
 import Link from "next/link"
+import { Parallax } from 'react-scroll-parallax';
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white py-12 px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Left Column - Navigation */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold mb-4 font-titles">Navigation</h3>
-            <div className="space-y-2">
-              <Link href="/work" className="block text-gray-400 hover:text-yellow-400 transition-colors font-text">
-                Our Work
-              </Link>
-              <Link href="/about" className="block text-gray-400 hover:text-yellow-400 transition-colors font-text">
-                About
-              </Link>
-              <Link href="/contact" className="block text-gray-400 hover:text-yellow-400 transition-colors font-text">
-                Contact
-              </Link>
-            </div>
+    <Parallax>
+      <footer className="container mx-auto max-w-screen-2xl py-12 px-8">
+        <div className="flex items-center flex-col md:flex-row space-y-8">
+          <div className="hidden space-y-2 md:block flex-1">
+            {/* <Link
+              href="tel:+529992755240"
+              className="block text-gray-400 hover:text-yellow-400 transition-colors font-text"
+            >
+              +52 9992 75 5240
+            </Link> */}
+            <Link
+              href="mailto:identiastudio25@gmail.com"
+              className="block text-gray-400 hover:text-yellow-400 transition-colors font-text"
+            >
+              identiastudio25@gmail.com
+            </Link>
           </div>
 
-          <div className="text-center">
-            <div className="mb-4">
-              <h2 className="text-4xl font-bold text-white mb-2 font-titles">
-                Always
-              </h2>
-              <p className="text-gray-400 text-sm font-text">
-                2021. We believe in the craft.
-              </p>
-            </div>
+          <div className="flex-1 flex flex-col items-center">
+            <Image
+              src="/images/identia-studio-light.png"
+              alt="Identia Studio: Light logo"
+              width={200} 
+              height={50} />
+            <p className="text-gray-400 text-sm font-text mt-4">
+              {new Date().getFullYear()}. Más que desarrollo: <strong>identidad digital.</strong>
+            </p>
           </div>
 
-          {/* Right Column - Social Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold mb-4 font-titles">Connect</h3>
-            <div className="space-y-2">
-              <Link href="/login" className="block text-gray-400 hover:text-yellow-400 transition-colors font-text">
-                Login
+          <div className="space-y-2 flex-1 text-center md:text-right">
+              {/* <Link
+                href="tel:+529992755240"
+                className="block text-gray-400 hover:text-yellow-400 transition-colors font-text md:hidden"
+              >
+                +52 9992 75 5240
+              </Link> */}
+              <Link
+                href="mailto:identiastudio25@gmail.com"
+                className="block text-gray-400 hover:text-yellow-400 transition-colors font-text md:hidden"
+              >
+                identiastudio25@gmail.com
               </Link>
-              <Link href="https://instagram.com" className="block text-gray-400 hover:text-yellow-400 transition-colors font-text">
-                Instagram
-              </Link>
-              <Link href="https://dribbble.com" className="block text-gray-400 hover:text-yellow-400 transition-colors font-text">
-                Dribbble
-              </Link>
-            </div>
+            <Link
+              href="https://instagram.com/identia.studio.mid"
+              className="block text-gray-400 hover:text-yellow-400 transition-colors font-text"
+              target="_blank"
+            >
+              Instagram
+            </Link>
+            <Link
+              href="https://www.facebook.com/identia.studio"
+              className="block text-gray-400 hover:text-yellow-400 transition-colors font-text"
+              target="_blank"
+            >
+              Facebook
+            </Link>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </Parallax>
   )
 }
