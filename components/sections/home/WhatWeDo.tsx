@@ -35,7 +35,7 @@ export function WhatWeDo() {
 
   return (
     <section className="bg-black text-white py-16 px-8">
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <div className="p-4">
           <div className="mb-2">
             <AnimatedBadge>

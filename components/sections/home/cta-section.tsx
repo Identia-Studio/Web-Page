@@ -13,7 +13,7 @@ export function CTASection() {
         <div className="max-w-6xl mx-auto text-center">
           {/* Main Heading */}
           <div className="relative">
-            <div className="absolute -top-16 left-0 right-0 flex justify-center space-x-8 flex-wrap">
+            <div className="hidden md:inline absolute -top-16 left-0 right-0 flex justify-center space-x-8 flex-wrap">
               <AnimatedBadge>
                 Seasoned pros in building big ideas
               </AnimatedBadge>
@@ -21,7 +21,7 @@ export function CTASection() {
                 A full service studio
               </AnimatedBadge>
             </div>
-            <div className="absolute -top-8 left-0 right-0 flex justify-center space-x-8 flex-wrap">
+            <div className="hidden md:inline absolute -top-8 left-0 right-0 flex justify-center space-x-8 flex-wrap">
               <AnimatedBadge delay={.6}>
                 Partners, not just vendors
               </AnimatedBadge>
@@ -33,7 +33,6 @@ export function CTASection() {
             <AnimatedTitle type="h2">
               ¿Listo para llevar tu negocio al siguiente nivel?
             </AnimatedTitle>
-
 
             <AnimatedText>
               Agenda una llamada gratuita.

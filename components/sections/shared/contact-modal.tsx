@@ -12,6 +12,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner"
 import AnimatedTitle from "@/components/ui/animated-title";
 import AnimatedBadge from "@/components/ui/animated-badge";
 import {
@@ -35,6 +36,7 @@ const formSchema = z.object({
 
 export default function ContactModal() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -47,11 +49,29 @@ export default function ContactModal() {
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values)
-    setSent(true)
-    form.reset()
+    setLoading(true)
+    fetch('https://formspree.io/f/xpwopzzz', {
+      method: 'post',
+      body: JSON.stringify(values),
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        setSent(true)
+        form.reset()
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            alert(data["errors"].map(error => error["message"]).join(", "))
+          } else {
+            alert("Oops! There was a problem submitting your form")
+          }
+        })
+      }
+
+      setLoading(false)
+    });
   }
 
   return (
@@ -66,12 +86,18 @@ export default function ContactModal() {
           className="text-sm"
           variant="ghost"
         >
-          <SatelliteIcon
-            className="opacity-60 mr-1"
-            size={16}
-            aria-hidden={true}
-          />
-          <span className="hidden md:inline">Contáctanos</span>
+          <motion.span
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ repeat: Infinity, repeatDelay: 4, duration: .5, ease: "easeInOut"}}
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap"
+          >
+            <SatelliteIcon
+              className="opacity-60 mr-1"
+              size={16}
+              aria-hidden={true}
+            />
+            <span className="hidden md:inline">Contáctanos</span>
+          </motion.span>
         </Button>
       </DialogTrigger>
       <DialogContent className={`sm:max-w-[425px] ${sent ? 'bg-yellow-400' : ''}`}>
@@ -156,9 +182,13 @@ export default function ContactModal() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setSent(false)}
-                    className="bg-yellow-400 text-black rounded-md py-2 px-4 font-medium"
+                    className="cursor-pointer bg-yellow-400 text-black rounded-md py-2 px-4 font-medium inline-flex items-center justify-center gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50"
                     type="submit"
+                    disabled={loading}
                   >
+                    {loading && (
+                      <Spinner />
+                    )}
                     Enviar otro
                   </motion.button>
                 </form>
