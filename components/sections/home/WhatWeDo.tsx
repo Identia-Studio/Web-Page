@@ -42,7 +42,7 @@ export function WhatWeDo() {
               Lo que hacemos
             </AnimatedBadge>
           </div>
-          <AnimatedTitle type="h3">
+          <AnimatedTitle type="h3" className="justify-start">
             Nuestros clientes aman
           </AnimatedTitle>
 

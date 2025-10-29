@@ -107,8 +107,8 @@ export default function ContactModal() {
               <AnimatedBadge>
                 Contáctanos
               </AnimatedBadge>
-              <AnimatedTitle type="h4">
-                Contáctanos
+              <AnimatedTitle type="h4" className="justify-start">
+                Hola.
               </AnimatedTitle>
             </div>
           )}
@@ -189,7 +189,7 @@ export default function ContactModal() {
                     {loading && (
                       <Spinner />
                     )}
-                    Enviar otro
+                    Enviar
                   </motion.button>
                 </form>
               </Form>

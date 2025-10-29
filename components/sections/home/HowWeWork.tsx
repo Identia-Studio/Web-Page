@@ -47,8 +47,8 @@ const STEPS: Step[] = [
 ]
 export function HowWeWork() {
   return (
-    <section className="bg-black text-white py-16 px-8">
-      <div className="p-4 text-center">
+    <section className="bg-black text-white py-16">
+      <div className="p-12 text-center">
         <div className="mb-2">
           <AnimatedBadge>
             Cómo trabajamos
@@ -63,40 +63,30 @@ export function HowWeWork() {
         </AnimatedText>
       </div>
       <div>
-        <div className="p-4 mx-auto">
-          <div className="relative flex flex-col md:flex-row md:justify-between md:items-start gap-10 md:gap-6 text-center md:text-left">
-            {/* Línea de conexión */}
-            <div className="hidden md:block absolute top-8 left-0 w-full h-[2px] bg-neutral-800"></div>
+        <div className="flex flex-col">
+          {STEPS.map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 0.7, y: 0 }}
+              whileHover={{opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: true }}
+              className="flex md:justify-between items-center bg-neutral-900 border-y border-neutral-800 flex-wrap py-4"
+            >
+              <h3 className="font-titles text-5xl md:text-7xl p-4 text-neutral-500 md:w-[200px]">
+                0{i+1}
+              </h3>
 
-            {STEPS.map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ scale: 1.05, backgroundColor: "#0f172a" }}
-                transition={{ duration: 0.4, delay: i * 0.15 }}
-                viewport={{ once: true }}
-                className="relative flex flex-col items-center md:items-start bg-neutral-900 rounded-2xl p-6 border border-neutral-800 min-h-[300px] flex-1"
-              >
-                <motion.div
-                  animate={{ rotate: [0, 5, -5, 0] }}
-                  transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                  className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mb-2"
-                >
-                  {step.icon}
-                </motion.div>
+              <h2 className="font-titles text-5xl md:text-7xl font-semibold uppercase md:flex-1 p-4 text-left">{step.title}</h2>
+              <p className=" text-neutral-400 mb-2 w-full md:w-1/3 p-4">
+                {step.description}
+                {"\n"}
+                {step.subtext}
+              </p>
 
-                <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                <p className="text-sm text-neutral-400 mb-2">{step.description}</p>
-                <p className="text-xs text-neutral-500">{step.subtext}</p>
-
-                {/* Línea conectora en versión mobile */}
-                {i < STEPS.length - 1 && (
-                  <div className="md:hidden w-[2px] h-8 bg-neutral-800 mt-4"></div>
-                )}
-              </motion.div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

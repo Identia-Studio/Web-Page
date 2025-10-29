@@ -9,7 +9,6 @@ interface Props {
 }
 
 const AnimatedBadge = ({ children, delay = 0}: Props) => {
-
   return (
     <div className="relative overflow-hidden px-4 py-2 text-sm font-medium transform -rotate-2 inline-block font-text">
       {/* Div animado que se “llena” */}

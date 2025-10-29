@@ -3,19 +3,19 @@
 import * as React from 'react';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from "motion/react"
-// import { HouseIcon, InboxIcon, Satellite, ZapIcon } from 'lucide-react';
+import { HouseIcon, InboxIcon, Satellite, ZapIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-// import {
-//   NavigationMenu,
-//   NavigationMenuItem,
-//   NavigationMenuLink,
-//   NavigationMenuList,
-// } from '@/components/ui/navigation-menu';
-// import {
-//   Popover,
-//   PopoverContent,
-//   PopoverTrigger,
-// } from '@/components/ui/popover';
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from '@/components/ui/navigation-menu';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import ContactModal from '../sections/shared/contact-modal';
@@ -148,21 +148,19 @@ export interface Navbar10Props extends React.HTMLAttributes<HTMLElement> {
   onUserItemClick?: () => void;
 }
 
-// // Default navigation links with icons
-// const defaultNavigationLinks: Navbar10NavItem[] = [
-//   { href: '#', label: 'Home', icon: HouseIcon, active: true },
-//   { href: '#', label: 'Inbox', icon: InboxIcon },
-//   { href: '#', label: 'Insights', icon: ZapIcon },
-// ];
+// Default navigation links with icons
+const defaultNavigationLinks: Navbar10NavItem[] = [
+  { href: '/', label: 'Home', icon: HouseIcon, active: true }
+];
 
 export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
   (
     {
       className,
       logo = <Logo />,
-      // navigationLinks = defaultNavigationLinks,
+      navigationLinks = defaultNavigationLinks,
       userAvatar,
-      // onNavItemClick,
+      onNavItemClick,
       onUserItemClick,
       ...props
     },
@@ -213,7 +211,7 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
           {/* Left side */}
           <div className="flex flex-1 items-center gap-2">
             {/* Mobile menu trigger */}
-            {/* {isMobile && (
+            {isMobile && (
               <Popover>
                 <PopoverTrigger asChild>
                   <Button
@@ -290,7 +288,7 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
                   })}
                 </NavigationMenuList>
               </NavigationMenu>
-            )} */}
+            )}
           </div>
 
           {/* Middle side: Logo */}
