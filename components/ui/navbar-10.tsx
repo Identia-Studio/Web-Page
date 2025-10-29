@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from "motion/react"
-import { HouseIcon, InboxIcon, Satellite, ZapIcon } from 'lucide-react';
+import { HouseIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,

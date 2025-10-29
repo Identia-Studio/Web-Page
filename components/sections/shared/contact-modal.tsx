@@ -63,7 +63,7 @@ export default function ContactModal() {
       } else {
         response.json().then(data => {
           if (Object.hasOwn(data, 'errors')) {
-            alert(data["errors"].map(error => error["message"]).join(", "))
+            alert(data["errors"].map((error: {message: string}) => error["message"]).join(", "))
           } else {
             alert("Oops! There was a problem submitting your form")
           }

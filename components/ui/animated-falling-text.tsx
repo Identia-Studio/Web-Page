@@ -1,6 +1,5 @@
 'use client'
 import { motion, Variants } from "motion/react"
-import {  ReactNode } from 'react';
 
 interface Props {
   children: string;
