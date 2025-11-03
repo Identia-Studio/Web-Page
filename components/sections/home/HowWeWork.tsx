@@ -78,7 +78,9 @@ export function HowWeWork() {
                 0{i+1}
               </h3>
 
-              <h2 className="font-titles text-5xl md:text-7xl font-semibold uppercase md:flex-1 p-4 text-left">{step.title}</h2>
+              <h2 className="font-titles text-4xl md:text-7xl font-semibold uppercase md:flex-1 p-4 text-left">
+                {step.title}
+              </h2>
               <p className=" text-neutral-400 mb-2 w-full md:w-1/3 p-4">
                 {step.description}
                 {"\n"}

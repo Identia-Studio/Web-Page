@@ -25,6 +25,11 @@ export default function RootLayout({
         />
         <link rel="icon" href="/favicon.png" sizes="any" />
 
+      </head>
+      <body className="antialiased bg-black text-white">
+        <BaseLayout>
+          {children}
+        </BaseLayout>
         {/* <!-- Meta Pixel Code --> */}
         <Script id="facebook-pixel" strategy="afterInteractive">
         {`
@@ -44,11 +49,6 @@ export default function RootLayout({
           <Image alt="facebook pixel" height="1" width="1" style={{display: 'none'}} src="https://www.facebook.com/tr?id=816576931331776&ev=PageView&noscript=1" />
         </noscript>
         {/* <!-- End Meta Pixel Code --> */}
-      </head>
-      <body className="antialiased bg-black text-white">
-        <BaseLayout>
-          {children}
-        </BaseLayout>
       </body>
     </html>
   );

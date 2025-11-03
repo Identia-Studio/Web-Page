@@ -13,7 +13,7 @@ export function CTASection() {
 
   return (
     <Parallax speed={10}>
-      <section className="bg-black text-white relative">
+      <section className="bg-black text-white relative overflow-hidden">
         {/* === Fondo animado (Ticker) === */}
         <div className="absolute overflow-hidden opacity-10 top-[-100px]">
           <motion.div

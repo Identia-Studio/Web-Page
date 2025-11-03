@@ -5,7 +5,7 @@ import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
 
 export function InProgressWork() {
   return (
-    <ParallaxBanner  style={{ aspectRatio: '16 / 9' }}>
+    <ParallaxBanner style={{ aspectRatio: '2 / 1' }}>
       <ParallaxBannerLayer speed={-20}>
         <Image
           src="/images/banner-background.jpg" // Replace with your image path
