@@ -16,51 +16,58 @@ interface Step {
 const STEPS: Step[] = [
   {
     title: "Onboarding",
-    description: "Nos reunimos contigo para conocer tu proyecto y entender tu visión.",
-    subtext: "Definimos objetivos, estilo visual y alcances iniciales.",
+    description: "Nos alineamos en objetivo, alcance, tiempos y definición",
+    subtext: "de éxito.",
     icon: <Handshake className="w-6 h-6 text-black" />
   },
   {
     title: "Discovery",
-    description: "Investigamos y analizamos tu marca, tu mercado y tu competencia.",
-    subtext: "Encontramos oportunidades visuales y de posicionamiento.",
+    description: "Entendemos usuario, negocio y mercado. Priorizamos lo",
+    subtext: "que mueve el producto.",
     icon: <Search className="w-6 h-6 text-black" />
   },
   {
     title: "Moodboard",
-    description: "Creamos conceptos visuales, tipografías y paletas de color.",
-    subtext: "Damos forma al ADN visual de tu marca.",
+    description: "Exploramos dirección visual + experiencia. Prototipo",
+    subtext: "navegable para validar rápido.",
     icon: <Paintbrush className="w-6 h-6 text-black" />
   },
   {
     title: "Refining",
-    description: "Iteramos y refinamos los detalles contigo.",
-    subtext: "Pequeños cambios, gran diferencia. La coherencia importa.",
+    description: "Iteramos con feedback, afinamos UX/UI y definimos el",
+    subtext: "sistema de componentes.",
     icon: <Pencil className="w-6 h-6 text-black" />
   },
   {
     title: "Deliver",
-    description: "Te entregamos todo listo para brillar.",
-    subtext: "Archivos finales, guías de uso y acompañamiento post-entrega.",
+    description: "Entregamos diseño + build, documentación y soporte de",
+    subtext: "lanzamiento.",
     icon: <Rocket className="w-6 h-6 text-black" />
   }
 ]
 export function HowWeWork() {
   return (
     <section className="bg-black text-white py-16">
-      <div className="p-12 text-center">
-        <div className="mb-2">
-          <AnimatedBadge>
-            Cómo trabajamos
-          </AnimatedBadge>
-        </div>
-        <AnimatedTitle type="h3">
-          Nuestro proceso  
-        </AnimatedTitle>
+      <div className="px-8">
+        <motion.h2
+            className="text-4xl md:text-5xl text-gray-300 max-w-2xl font-titles uppercase font-bold w-1/2 md:w-1/3"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Nuestro <span className="text-yellow-400">proceso</span>
+          </motion.h2>
 
-        <AnimatedText>
-          Transformamos ideas en identidades sólidas a través de un proceso claro y colaborativo
-        </AnimatedText>
+          <motion.p
+            className="text-md md:text-lg text-gray-300 max-w-2xl leading-relaxed font-text mb-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Un proceso simple, con entregables claros en cada etapa.
+          </motion.p>
       </div>
       <div>
         <div className="flex flex-col">
@@ -81,7 +88,7 @@ export function HowWeWork() {
               <h2 className="font-titles text-4xl md:text-7xl font-semibold uppercase md:flex-1 p-4 text-left">
                 {step.title}
               </h2>
-              <p className=" text-neutral-400 mb-2 w-full md:w-1/3 p-4">
+              <p className=" text-neutral-400 mb-2 w-full md:w-1/3 p-4 text-left md:text-right">
                 {step.description}
                 {"\n"}
                 {step.subtext}

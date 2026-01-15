@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export function Hero() {
   return (
-    <section className=" px-8 container mx-auto max-w-screen-2xl">
+    <section className="pb-16 px-8 container mx-auto max-w-screen-2xl">
       <div className="flex flex-col-reverse md:flex-row gap-4 items-center">
         <motion.div
           className="w-full md:w-1/2"
@@ -35,14 +35,14 @@ export function Hero() {
 
           <div className="flex flex-col md:flex-row gap-4">
             <Button asChild>
-              <Link href="/schedule">
+              <Link href="#contact">
                 Agendar llamada
               </Link>
             </Button>
 
             <Button variant="outline" asChild>
-              <Link href="#portfolio">
-                Nuestro portafolio
+              <Link href="https://api.whatsapp.com/send?phone=529995446000&text=Hola%2C+me+gustar%C3%ADa+cotizar+un+servicio." target="_blank">
+                Escríbenos por WhatsApp
               </Link>
             </Button>
           </div>
