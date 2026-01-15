@@ -4,7 +4,6 @@ import AnimatedSection from "@/components/ui/animated-section";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 
-
 interface PortfolioItem {
   title: string;
   description: string;
@@ -21,8 +20,13 @@ export function Portfolio() {
     },
     {
       title: "RedHome Inmobiliaria",
-      description: "Sitio web inmobiliario integrado con EasyBroker, que permite mostrar propiedades actualizadas en tiempo real, gestionar leads y ofrecer una experiencia de búsqueda ágil, visual y optimizada para SEO.",
+      description: "Sitio web inmobiliario integrado con EasyBroker, que permite mostrar propiedades actualizadas en tiempo real, gestionar leads descargar fichas y ofrecer una experiencia de búsqueda ágil, visual y optimizada para SEO.",
       image: undefined
+    },
+    {
+      title: "QuickBite",
+      description: "QuickBite es una plataforma de pedidos rápidos para restaurantes y usuarios, con menú en tiempo real, pagos seguros y seguimiento de entrega. Optimiza la operación, reduce tiempos de espera y mejora la experiencia de compra desde móvil y web.",
+      image: '/images/quickbite.jpeg'
     },
   ]
 
@@ -57,12 +61,12 @@ export function Portfolio() {
                 <Card className="bg-yellow-400">
                   <CardHeader>
                     <Image
-                      src={item.image ? item.image : 'https://placehold.co/600x440'}
+                      src={item.image ? item.image : 'https://placehold.co/640x360'}
                       alt="item.title"
-                      width={600}
-                      height={440}
+                      width={640}
+                      height={360}
                       unoptimized={!item.image}
-                      className="rounded-xl"
+                      className="rounded-xl max-h-[182px] w-full"
                     />
                   </CardHeader>
                   <CardContent>
