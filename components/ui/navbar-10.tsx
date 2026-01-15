@@ -1,192 +1,22 @@
 'use client';
 
 import * as React from 'react';
-import { useEffect, useState, useRef } from 'react';
+import { useRef } from 'react';
 import { motion } from "motion/react"
-import { HouseIcon } from 'lucide-react';
+import Image from "next/image";
 import { Button } from '@/components/ui/button';
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from '@/components/ui/navigation-menu';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
-import ContactModal from '../sections/shared/contact-modal';
+import Link from 'next/link';
 
-// Simple logo component for the navbar
-const Logo = (props: React.SVGAttributes<SVGElement>) => {
-  return (
-    <svg width='1em' height='1em' viewBox='0 0 324 323' fill='currentColor' xmlns='http://www.w3.org/2000/svg' {...props}>
-      <rect
-        x='88.1023'
-        y='144.792'
-        width='151.802'
-        height='36.5788'
-        rx='18.2894'
-        transform='rotate(-38.5799 88.1023 144.792)'
-        fill='currentColor'
-      />
-      <rect
-        x='85.3459'
-        y='244.537'
-        width='151.802'
-        height='36.5788'
-        rx='18.2894'
-        transform='rotate(-38.5799 85.3459 244.537)'
-        fill='currentColor'
-      />
-    </svg>
-  );
-};
-
-// Hamburger icon component
-const HamburgerIcon = ({ className, ...props }: React.SVGAttributes<SVGElement>) => (
-  <svg
-    className={cn('pointer-events-none', className)}
-    width={16}
-    height={16}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <path
-      d="M4 12L20 12"
-      className="origin-center -translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]"
-    />
-    <path
-      d="M4 12H20"
-      className="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45"
-    />
-    <path
-      d="M4 12H20"
-      className="origin-center translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]"
-    />
-  </svg>
-);
-
-// User Menu Component
-const UserMenu = ({
-  userAvatar,
-  onClick
-}: {
-  userAvatar?: string;
-  onClick?: () => void;
-}) => (
-  <Button variant="ghost" className="h-9 px-2 py-0 hover:bg-accent hover:text-accent-foreground cursor-pointer" onClick={onClick}>
-    <motion.div
-      className="flex -space-x-2"
-    >
-      <motion.div
-        className="*:data-[slot=avatar]:ring-background *:data-[slot=avatar]:ring-2"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ repeat: Infinity, repeatDelay: 8, duration: .5, ease: "easeInOut"}}
-      >
-        <Avatar className="h-7 w-7">
-          <AvatarImage src={userAvatar} alt={'Jorge Andrade'} />
-          <AvatarFallback className="text-xs">
-           JA
-          </AvatarFallback>
-        </Avatar>
-      </motion.div>
-      <motion.div
-        className="*:data-[slot=avatar]:ring-background *:data-[slot=avatar]:ring-2"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ repeat: Infinity, repeatDelay: 8, duration: .5, ease: "easeInOut"}}
-      >
-        <Avatar className="h-7 w-7">
-          <AvatarImage src={userAvatar} alt={'Victor Andrade'} />
-          <AvatarFallback className="text-xs">
-            VA
-          </AvatarFallback>
-        </Avatar>
-      </motion.div>
-      <motion.div
-        className="*:data-[slot=avatar]:ring-background *:data-[slot=avatar]:ring-2"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ repeat: Infinity, repeatDelay: 8, duration: .5, ease: "easeInOut"}}
-      >
-        <Avatar className="h-7 w-7">
-          <AvatarImage src={userAvatar} alt={'Mar Pérez'} />
-          <AvatarFallback className="text-xs">
-            MP
-          </AvatarFallback>
-        </Avatar>
-      </motion.div>
-    </motion.div>
-    <span className="sr-only">User menu</span>
-  </Button>
-);
-
-// Types
-export interface Navbar10NavItem {
-  href?: string;
-  label: string;
-  icon: React.ComponentType<{ size?: number; className?: string; 'aria-hidden'?: boolean }>;
-  active?: boolean;
-}
-
-export interface Navbar10Props extends React.HTMLAttributes<HTMLElement> {
-  logo?: React.ReactNode;
-  logoHref?: string;
-  navigationLinks?: Navbar10NavItem[];
-  upgradeText?: string;
-  userAvatar?: string;
-  onNavItemClick?: (href: string) => void;
-  onUpgradeClick?: () => void;
-  onUserItemClick?: () => void;
-}
-
-// Default navigation links with icons
-const defaultNavigationLinks: Navbar10NavItem[] = [
-  { href: '/', label: 'Home', icon: HouseIcon, active: true }
-];
-
-export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
+export const Navbar10 = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(
   (
     {
       className,
-      logo = <Logo />,
-      navigationLinks = defaultNavigationLinks,
-      userAvatar,
-      onNavItemClick,
-      onUserItemClick,
       ...props
     },
     ref
   ) => {
-    const [isMobile, setIsMobile] = useState(false);
     const containerRef = useRef<HTMLElement>(null);
-
-    useEffect(() => {
-      const checkWidth = () => {
-        if (containerRef.current) {
-          const width = containerRef.current.offsetWidth;
-          setIsMobile(width < 768); // 768px is md breakpoint
-        }
-      };
-
-      checkWidth();
-      const resizeObserver = new ResizeObserver(checkWidth);
-      if (containerRef.current) {
-        resizeObserver.observe(containerRef.current);
-      }
-
-      return () => {
-        resizeObserver.disconnect();
-      };
-    }, []);
 
     // Combine refs
     const combinedRef = React.useCallback((node: HTMLElement | null) => {
@@ -210,107 +40,28 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
         <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4">
           {/* Left side */}
           <div className="flex flex-1 items-center gap-2">
-            {/* Mobile menu trigger */}
-            {isMobile && (
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    className="group h-8 w-8 hover:bg-accent hover:text-accent-foreground"
-                    variant="ghost"
-                    size="icon"
-                  >
-                    <HamburgerIcon />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent align="start" className="w-64 p-1 bg-[#181818]" >
-                  <NavigationMenu className="max-w-none">
-                    <NavigationMenuList className="flex-col items-start gap-0">
-                      {navigationLinks.map((link, index) => {
-                        const Icon = link.icon;
-                        return (
-                          <NavigationMenuItem key={index} className="w-full">
-                            <button
-                              onClick={(e) => {
-                                e.preventDefault();
-                                if (onNavItemClick && link.href) {
-                                  onNavItemClick(link.href);
-                                } else {
-                                  console.log('Navigate to:', link.href);
-                                }
-                              }}
-                              className={cn(
-                                'flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline',
-                                link.active && 'bg-accent text-accent-foreground'
-                              )}
-                            >
-                              <Icon
-                                size={16}
-                                className="text-muted-foreground/80"
-                                aria-hidden={true}
-                              />
-                              <span>{link.label}</span>
-                            </button>
-                          </NavigationMenuItem>
-                        );
-                      })}
-                    </NavigationMenuList>
-                  </NavigationMenu>
-                </PopoverContent>
-              </Popover>
-            )}
-
-            {!isMobile && (
-              <NavigationMenu className="flex">
-                <NavigationMenuList className="gap-2">
-                  {navigationLinks.map((link, index) => {
-                    return (
-                      <NavigationMenuItem key={index}>
-                        <NavigationMenuLink
-                          href={link.href}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            if (onNavItemClick && link.href) {
-                              onNavItemClick(link.href);
-                            } else {
-                              console.log('Navigate to:', link.href);
-                            }
-                          }}
-                          className={cn(
-                            'text-foreground hover:text-primary flex items-center gap-2 py-1 font-medium transition-colors cursor-pointer group inline-flex w-max justify-center rounded-md bg-background px-4 py-1 text-sm focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 rounded-full',
-                            link.active && 'text-primary'
-                          )}
-                          data-active={link.active}
-                        >
-                          <span>{link.label}</span>
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                    );
-                  })}
-                </NavigationMenuList>
-              </NavigationMenu>
-            )}
-          </div>
-
-          {/* Middle side: Logo */}
-          <div className="flex items-center">
-            <button
-              onClick={(e) => e.preventDefault()}
-              className="text-primary hover:text-primary/90 transition-colors cursor-pointer"
-            >
-              {logo}
-            </button>
+            <Image
+                src="/images/identia-studio-light.png"
+                alt="Identia Studio: Light logo"
+                width={100} 
+                height={50} />
           </div>
 
           {/* Right side: Actions */}
           <div className="flex flex-1 items-center justify-end gap-4">
-            {/* User menu */}
-            <UserMenu
-              userAvatar={userAvatar}
-              onClick={onUserItemClick}
-            />
-
-            {/* Upgrade button */}
-            <ContactModal />
+            <Button
+              asChild
+            >
+              <Link href="/#contact">
+                <motion.span
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ repeat: Infinity, repeatDelay: 4, duration: .5, ease: "easeInOut"}}
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap"
+                >
+                  Contáctanos
+                </motion.span>
+              </Link>
+            </Button>
           </div>
         </div>
       </header>
@@ -319,5 +70,3 @@ export const Navbar10 = React.forwardRef<HTMLElement, Navbar10Props>(
 );
 
 Navbar10.displayName = 'Navbar10';
-
-export { Logo, HamburgerIcon, UserMenu };
