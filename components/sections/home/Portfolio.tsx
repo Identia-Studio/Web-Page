@@ -21,7 +21,7 @@ export function Portfolio() {
     {
       title: "RedHome Inmobiliaria",
       description: "Sitio web inmobiliario integrado con EasyBroker, que permite mostrar propiedades actualizadas en tiempo real, gestionar leads descargar fichas y ofrecer una experiencia de búsqueda ágil, visual y optimizada para SEO.",
-      image: undefined
+      image: '/images/redhome-realty.jpg'
     },
     {
       title: "QuickBite",
