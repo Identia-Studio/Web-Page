@@ -3,10 +3,18 @@ import Script from 'next/script';
 import "./globals.css"
 import BaseLayout from "@/components/layout/base_layout";
 import Image from "next/image";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: "Identia Studio - Más que desarrollo: identidad digital.",
   description: "We create beautiful, modern web experiences that help your business grow. From design to development, we bring your vision to life.",
+  openGraph: {
+    title: 'Identia Studio',
+    description: 'Desarrollo web y soluciones digitales a la medida.',
+    url: 'https://identiastudio.com',
+    siteName: 'Identia Studio',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
@@ -49,6 +57,7 @@ export default function RootLayout({
           <Image alt="facebook pixel" height="1" width="1" style={{display: 'none'}} src="https://www.facebook.com/tr?id=816576931331776&ev=PageView&noscript=1" />
         </noscript>
         {/* <!-- End Meta Pixel Code --> */}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   );

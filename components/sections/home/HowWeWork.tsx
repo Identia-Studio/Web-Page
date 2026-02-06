@@ -1,9 +1,6 @@
 'use client'
 import { ReactNode } from 'react';
 import { motion } from "framer-motion";
-import AnimatedBadge from "@/components/ui/animated-badge";
-import AnimatedTitle from "@/components/ui/animated-title";
-import AnimatedText from "@/components/ui/animated-text";
 import { Rocket, Search, Handshake, Paintbrush, Pencil } from "lucide-react";
 
 interface Step {
@@ -85,9 +82,9 @@ export function HowWeWork() {
                 0{i+1}
               </h3>
 
-              <h2 className="font-titles text-4xl md:text-7xl font-semibold uppercase md:flex-1 p-4 text-left">
+              <h4 className="font-titles text-4xl md:text-7xl font-semibold uppercase md:flex-1 p-4 text-left">
                 {step.title}
-              </h2>
+              </h4>
               <p className=" text-neutral-400 mb-2 w-full md:w-1/3 p-4 text-left md:text-right">
                 {step.description}
                 {"\n"}
