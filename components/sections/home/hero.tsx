@@ -1,5 +1,6 @@
 'use client'
 
+import WhatsappIcon from "@/components/icons/whatsapp_icon"
 import { Button } from "@/components/ui/button"
 import { motion } from "motion/react"
 import Image from "next/image"
@@ -48,6 +49,7 @@ export function Hero() {
             <Button variant="outline" asChild>
               <Link href="https://api.whatsapp.com/send?phone=529995446000&text=Hola%2C+me+gustar%C3%ADa+cotizar+un+servicio." target="_blank">
                 Escríbenos por WhatsApp
+                <WhatsappIcon />
               </Link>
             </Button>
           </motion.div>

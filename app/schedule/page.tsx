@@ -9,6 +9,9 @@ export const metadata = {
   title: 'Agenda una asesoría digital | Identia Studio',
   description:
     'Agenda una asesoría gratuita para analizar tu sitio web, SEO o proyecto digital. Te ayudamos a definir la mejor estrategia.',
+  alternates: {
+    canonical: '/schedule',
+  },
 };
 
 export default function Schedule() {

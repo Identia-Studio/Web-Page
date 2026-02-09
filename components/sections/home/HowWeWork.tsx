@@ -44,20 +44,20 @@ const STEPS: Step[] = [
 ]
 export function HowWeWork() {
   return (
-    <section className="bg-black text-white py-16">
+    <section className="bg-yellow-400 text-white py-16">
       <div className="px-8">
         <motion.h2
-            className="text-4xl md:text-5xl text-gray-300 max-w-2xl font-titles uppercase font-bold w-1/2 md:w-1/3"
+            className="text-4xl md:text-5xl text-white max-w-2xl font-titles uppercase font-bold w-1/2 md:w-1/3"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Nuestro <span className="text-yellow-400">proceso</span>
+            Nuestro <span className="text-gray-900">proceso</span>
           </motion.h2>
 
           <motion.p
-            className="text-md md:text-lg text-gray-300 max-w-2xl leading-relaxed font-text mb-8"
+            className="text-md md:text-lg text-gray-900 max-w-2xl leading-relaxed font-text mb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
@@ -72,20 +72,20 @@ export function HowWeWork() {
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 0.7, y: 0 }}
+              whileInView={{ opacity: 0.8, y: 0 }}
               whileHover={{opacity: 1 }}
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className="flex md:justify-between items-center bg-neutral-900 border-y border-neutral-800 flex-wrap py-4"
+              className="flex items-center bg-yellow-400 border-y border-black flex-wrap py-4"
             >
-              <h3 className="font-titles text-5xl md:text-7xl p-4 text-neutral-500 md:w-[200px]">
+              <h3 className="font-titles text-5xl md:text-6xl p-4 text-gray-900 ">
                 0{i+1}
               </h3>
 
-              <h4 className="font-titles text-4xl md:text-7xl font-semibold uppercase md:flex-1 p-4 text-left">
+              <h4 className="flex-1 font-titles text-4xl md:text-6xl font-semibold uppercase p-4 text-left text-gray-900">
                 {step.title}
               </h4>
-              <p className=" text-neutral-400 mb-2 w-full md:w-1/3 p-4 text-left md:text-right">
+              <p className="md:flex-1 text-gray-900 mb-2 p-4 text-left justify-self-end">
                 {step.description}
                 {"\n"}
                 {step.subtext}

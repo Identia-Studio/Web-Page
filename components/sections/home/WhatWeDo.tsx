@@ -1,39 +1,86 @@
 'use client'
-import { motion } from "motion/react"
+import { motion, Variants } from "motion/react"
 import { ReactElement } from 'react';
 import { AppWindow, BrushIcon, CodeIcon } from 'lucide-react';
-import AnimatedSection from "@/components/ui/animated-section";
-import { Separator } from "@/components/ui/separator"
+import AnimatedServices from "./services/animated-services";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import WhatsappIcon from "@/components/icons/whatsapp_icon";
+import { Capabilities } from "./services/capabilities";
+import { ScheduleCtaSection } from "../shared/schedule-cta-section";
 
 
 interface Service {
   title: string;
   description: string;
-  icon?: ReactElement<SVGSVGElement>
+  image: string,
+  features: string[];
 }
+
+const container: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25,
+      delayChildren: 0.2
+    },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, x: 20 },
+  visible: { opacity: 1, x: 0 },
+};
 
 
 export function WhatWeDo() {
   const SERVICES: Service[] = [
     {
+      title: "Desarrollo Web",
+      description: "Plataformas y sitios listos para producción.",
+      image: "/images/services/desarrollo-web.png",
+      features: [
+        'Performance y escalabilidad',
+        'Front + Back (según caso)',
+        'Deploy + QA básico'
+      ]
+    },
+    {
+      title: "Apps Móviles",
+      description: "Apps IOS/Android para usuarios reales.",
+      image: "/images/services/apps-moviles.png",
+      features: [
+        'Auth, perfiles, notificaciones',
+        'Integraciones (pagos/APIs)',
+        'Publicación y soporte'
+      ]
+    },
+    {
       title: "UI/UX Design",
-      description: "Diseñamos experiencias y una identidad visual consistente. Flujos, interfaces y sistema de diseño para web, app y marketing. Listo para construir y escalar.",
-      icon: <AppWindow size={34} />
+      description: "Experiencias claras que se sienten premium.",
+      image: "/images/services/ui-ux-design.png",
+      features: [
+        'Flujos + prototipos',
+        'UI final + componentes',
+        'Handoff para desarrollo'
+      ]
     },
     {
-      title: "Software Development",
-      description: "Webs, plataformas y apps móviles listas para producción. Integraciones (auth, pagos, APIs) + performance y estabilidad. Base escalable para evolucionar sin rehacer.",
-      icon: <CodeIcon size={34} />
-    },
-    {
-      title: "Inteligencia Artificial",
-      description: "IA aplicada para automatizar y mejorar tu producto. Asistentes, búsqueda inteligente, clasificación y extracción de datos. Impacto real, con privacidad y control humano.",
-      icon: <BrushIcon size={34} />
+      title: "Branding",
+      description: "Identidad visual consistente para producto y marketing.",
+      image: "/images/services/branding.png",
+      features: [
+        'Sistema visual (no solo logotipo)',
+        'Guía rápída + assets',
+        'Consistencia web/app/redes'
+      ]
     },
   ]
 
   return (
-    <section className="text-white py-16 px-8 bg-[#101010]">
+    <section className="text-white py-16 px-8">
       <div className="">
         <div >
           <motion.h2
@@ -57,32 +104,70 @@ export function WhatWeDo() {
           </motion.p>
         </div>
         <div >
-          <AnimatedSection>
+          <AnimatedServices>
             {SERVICES.map((service: Service) => (
-              <div key={service.title} className="rounded-lg p-6 relative shadow mb-6">
-                <div className=" w-12 h-12 bg-[#181818] rounded-full flex items-center justify-center mb-14">
-                  <motion.span
-                    className="text-yellow-400 font-bold"
-                    whileInView={{ scale: 1 }}
-                    initial={{ scale: -1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    viewport={{once: true}}
-                  >
-                    {service.icon}
-                  </motion.span>
+              <div key={service.title} className="rounded-lg p-6 relative bg-[#171717] h-full">
+                <div className="flex items-start gap-4 mb-6">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    className="object-cover "
+                    width={70}
+                    height={70}
+                  />
+                  <div className="flex-1">
+                    <h3 className="text-yellow-400 font-semibold text-xl mb-1 font-titles">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-300 text-xs leading-relaxed font-text font-medium">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
                 
-                <div className="">
-                  <h4 className="text-yellow-400 font-semibold text-xl mb-1 font-titles">
-                    {service.title}
-                  </h4>
-                  <p className="text-gray-300 text-xs leading-relaxed font-text">
-                    {service.description}
-                  </p>
-                </div>
+                <motion.ul
+                  variants={container}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="list-disc pl-5 marker:text-yellow-400 mb-4"
+                >
+                  {service.features.map((feature) => (
+                    <motion.li
+                      variants={item}
+                      key={feature}
+                      className="text-gray-300 text-sm font-text leading-relaxed">
+                        {feature}
+                      </motion.li>
+                  ))}
+                </motion.ul>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  className="flex flex-col lg:flex-row gap-4">
+                  <Button asChild>
+                    <Link href="#contact">
+                      Solicitar propuesta
+                    </Link>
+                  </Button>
+
+                  <Button variant="outline" asChild>
+                    <Link href={`https://api.whatsapp.com/send?phone=529995446000&text=Hola%2C+me+gustar%C3%ADa+cotizar+un+servicio+de+${service.title.replace(/\s/, '+')}`} target="_blank">
+                      Escríbenos por WhatsApp
+                      <WhatsappIcon />
+                    </Link>
+                  </Button>
+                </motion.div>
               </div>
             ))}
-          </AnimatedSection>
+          </AnimatedServices>
+
+          <Capabilities />
+
+          <ScheduleCtaSection />
         </div>
       </div>
     </section>
