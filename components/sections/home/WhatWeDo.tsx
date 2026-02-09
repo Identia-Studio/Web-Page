@@ -80,7 +80,7 @@ export function WhatWeDo() {
   ]
 
   return (
-    <section className="text-white py-16 px-8">
+    <section className="text-white py-16 px-8 container mx-auto max-w-screen-2xl">
       <div className="">
         <div >
           <motion.h2
