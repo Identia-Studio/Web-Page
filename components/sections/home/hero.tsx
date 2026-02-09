@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button"
 import { motion } from "motion/react"
 import Image from "next/image"
 import Link from "next/link"
+import Vector2 from '@/assets/images/vector-2.png'
+import Icosahedron from '@/assets/images/Icosahedron.png'
+
 
 export function Hero() {
   return (
@@ -15,7 +18,7 @@ export function Hero() {
           viewport={{ once: true }}
         >
           <motion.h1
-            className="text-4xl md:text-5xl text-gray-300 max-w-2xl mx-auto font-titles uppercase font-bold"
+            className="text-4xl md:text-5xl text-gray-300 max-w-2xl font-titles uppercase font-bold"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
@@ -25,7 +28,7 @@ export function Hero() {
           </motion.h1>
           
           <motion.p
-            className="text-md md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed font-titles mb-8"
+            className="text-md md:text-lg text-gray-300 max-w-2xl leading-relaxed font-titles mb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
@@ -64,7 +67,7 @@ export function Hero() {
             viewport={{ once: true }}
           >
             <Image
-              src="/images/vector-2.png"
+              src={Vector2}
               alt="vector-2"
               width={640}
               height={640}
@@ -79,7 +82,7 @@ export function Hero() {
           >
             <Image
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-              src="/images/Icosahedron.png"
+              src={Icosahedron}
               alt="Icosahedron"
               width={500}
               height={500}

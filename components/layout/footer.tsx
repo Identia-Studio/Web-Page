@@ -3,15 +3,19 @@ import Image from "next/image";
 import Link from "next/link"
 import { Parallax } from 'react-scroll-parallax';
 import ContactForm from "../sections/shared/contact-form";
+import IdentiaLight from '@/assets/images/identia-studio-light.png'
+import linkedin from '@/assets/images/linkedin.svg'
+import instagram from '@/assets/images/instagram.svg'
+import facebook from '@/assets/images/facebook.svg'
 
 export function Footer() {
   return (
     <Parallax>
-      <footer className="container mx-auto max-w-screen-2xl py-12 px-8" id="contact">
+      <footer className="container mx-auto max-w-screen-2xl py-40 px-8" id="contact">
         <div className="flex flex-col md:flex-row space-y-8">
           <div className="w-full md:w-2/3 mb-12 md:mb-0">
             <Image
-              src="/images/identia-studio-light.png"
+              src={IdentiaLight}
               alt="Identia Studio: Light logo"
               width={200} 
               height={50} />
@@ -69,7 +73,7 @@ export function Footer() {
                 target="_blank"
               >
                 <Image
-                  src='/images/linkedin.svg'
+                  src={linkedin}
                   width={16}
                   height={16}
                   alt="Identia Studio: LinkedIn @identia-studio-mid"
@@ -83,7 +87,7 @@ export function Footer() {
                 target="_blank"
               >
                 <Image
-                  src='/images/instagram.svg'
+                  src={instagram}
                   width={16}
                   height={16}
                   alt="Identia Studio: Instagram @identia.studio.mid"
@@ -95,7 +99,7 @@ export function Footer() {
                 target="_blank"
               >
                 <Image
-                  src='/images/facebook.svg'
+                  src={facebook}
                   width={16}
                   height={16}
                   alt="Identia Studio: Facebook @identia.studio"

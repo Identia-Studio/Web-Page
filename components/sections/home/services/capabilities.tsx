@@ -1,11 +1,18 @@
 'use client'
 import { motion, Variants } from "motion/react"
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import desarrolloapis from '@/assets/images/services/desarrollo-apis.png'
+import integraciones from '@/assets/images/services/integraciones.png'
+import securityscan from '@/assets/images/services/security-scan.png'
+import automatizaciones from '@/assets/images/services/automatizaciones.png'
+import inteligenciaartificial from '@/assets/images/services/inteligencia-artificial.png'
+import diagnosticoseo from '@/assets/images/services/diagnostico-seo.png'
+import capacidades from '@/assets/images/services/capacidades-tecnicas.png'
 
 
 interface Capability {
   title: string;
-  icon: string,
+  icon: StaticImageData,
 }
 
 const container: Variants = {
@@ -29,34 +36,34 @@ export function Capabilities() {
   const capabilities: Capability[] = [
     {
       title: "Desarrollo de APIs",
-      icon: "/images/services/desarrollo-apis.png"
+      icon: desarrolloapis
     },
     {
       title: "Integraciones",
-      icon: "/images/services/integraciones.png"
+      icon: integraciones
     },
     {
       title: "Security Scan",
-      icon: "/images/services/security-scan.png"
+      icon: securityscan
     },
     {
       title: "Automatizaciones",
-      icon: "/images/services/automatizaciones.png"
+      icon: automatizaciones
     },
     {
       title: "Inteligencia Artificial",
-      icon: "/images/services/inteligencia-artificial.png"
+      icon: inteligenciaartificial
     },
     {
       title: "Diagnóstico SEO",
-      icon: "/images/services/diagnostico-seo.png"
+      icon: diagnosticoseo
     },
   ]
 
   return (
     <section
       className="rounded-lg p-6 relative mb-14 bg-[#171717] bg-cover"
-      style={{backgroundImage: 'url(/images/services/waves.png)'}}
+      style={{backgroundImage: 'url(/images/waves.png)'}}
     >
       <div className="flex flex-col md:flex-row items-start gap-4 mb-6">
         <motion.div
@@ -66,7 +73,7 @@ export function Capabilities() {
           viewport={{ once: true }}
         >
           <Image
-            src="/images/services/capacidades-tecnicas.png"
+            src={capacidades}
             alt="Capacidades técnicas"
             className="object-cover"
             width={70}

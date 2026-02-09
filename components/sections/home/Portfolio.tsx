@@ -1,13 +1,16 @@
 'use client'
 import { motion } from "motion/react"
+import Image, { StaticImageData } from "next/image";
 import AnimatedSection from "@/components/ui/animated-section";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import Image from "next/image";
+import cruceidse from '@/assets/images/cruceidse-thumbnail.png'
+import redhome from '@/assets/images/redhome-realty.jpg'
+import quickbite from '@/assets/images/quickbite.jpeg'
 
 interface PortfolioItem {
   title: string;
   description: string;
-  image?: string;
+  image?: StaticImageData;
 }
 
 
@@ -16,17 +19,17 @@ export function Portfolio() {
     {
       title: "CruceIDSE",
       description: "Aplicación web diseñada para comparar información de forma rápida y precisa, optimizando procesos internos y reduciendo errores operativos. Enfocada en rendimiento, claridad de datos y experiencia de usuario.",
-      image: '/images/cruceidse-thumbnail.png'
+      image: cruceidse
     },
     {
       title: "RedHome Inmobiliaria",
       description: "Sitio web inmobiliario integrado con EasyBroker, que permite mostrar propiedades actualizadas en tiempo real, gestionar leads descargar fichas y ofrecer una experiencia de búsqueda ágil, visual y optimizada para SEO.",
-      image: '/images/redhome-realty.jpg'
+      image: redhome
     },
     {
       title: "QuickBite",
       description: "QuickBite es una plataforma de pedidos rápidos para restaurantes y usuarios, con menú en tiempo real, pagos seguros y seguimiento de entrega. Optimiza la operación, reduce tiempos de espera y mejora la experiencia de compra desde móvil y web.",
-      image: '/images/quickbite.jpeg'
+      image: quickbite
     },
   ]
 

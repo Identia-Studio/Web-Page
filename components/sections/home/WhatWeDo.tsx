@@ -1,20 +1,22 @@
 'use client'
 import { motion, Variants } from "motion/react"
-import { ReactElement } from 'react';
-import { AppWindow, BrushIcon, CodeIcon } from 'lucide-react';
 import AnimatedServices from "./services/animated-services";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import WhatsappIcon from "@/components/icons/whatsapp_icon";
 import { Capabilities } from "./services/capabilities";
 import { ScheduleCtaSection } from "../shared/schedule-cta-section";
+import desarrollo from '@/assets/images/services/desarrollo-web.png'
+import apps from '@/assets/images/services/apps-moviles.png'
+import ui from '@/assets/images/services/ui-ux-design.png'
+import branding from '@/assets/images/services/branding.png'
 
 
 interface Service {
   title: string;
   description: string;
-  image: string,
+  image: StaticImageData,
   features: string[];
 }
 
@@ -40,7 +42,7 @@ export function WhatWeDo() {
     {
       title: "Desarrollo Web",
       description: "Plataformas y sitios listos para producción.",
-      image: "/images/services/desarrollo-web.png",
+      image: desarrollo,
       features: [
         'Performance y escalabilidad',
         'Front + Back (según caso)',
@@ -50,7 +52,7 @@ export function WhatWeDo() {
     {
       title: "Apps Móviles",
       description: "Apps IOS/Android para usuarios reales.",
-      image: "/images/services/apps-moviles.png",
+      image: apps,
       features: [
         'Auth, perfiles, notificaciones',
         'Integraciones (pagos/APIs)',
@@ -60,7 +62,7 @@ export function WhatWeDo() {
     {
       title: "UI/UX Design",
       description: "Experiencias claras que se sienten premium.",
-      image: "/images/services/ui-ux-design.png",
+      image: ui,
       features: [
         'Flujos + prototipos',
         'UI final + componentes',
@@ -70,7 +72,7 @@ export function WhatWeDo() {
     {
       title: "Branding",
       description: "Identidad visual consistente para producto y marketing.",
-      image: "/images/services/branding.png",
+      image: branding,
       features: [
         'Sistema visual (no solo logotipo)',
         'Guía rápída + assets',

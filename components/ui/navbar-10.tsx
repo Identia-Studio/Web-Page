@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import IdentiaLight from '@/assets/images/identia-studio-light.png'
 
 export const Navbar10 = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(
   (
@@ -41,7 +42,7 @@ export const Navbar10 = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLE
           {/* Left side */}
           <div className="flex flex-1 items-center gap-2">
             <Image
-                src="/images/identia-studio-light.png"
+                src={IdentiaLight}
                 alt="Identia Studio: Light logo"
                 width={100} 
                 height={50} />

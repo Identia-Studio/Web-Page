@@ -7,7 +7,7 @@ export function ScheduleCtaSection() {
   return (
     <section
       className="rounded-lg p-6 relative mb-6 bg-[#171717] bg-cover bg-center"
-      style={{backgroundImage: 'url(/images/services/dark-hole.png)'}}
+      style={{backgroundImage: 'url(/images/dark-hole.png)'}}
     >
       <div className="flex-1 flex flex-col items-center py-10 text-center">
         <h3 className="text-yellow-400 font-semibold text-xl mb-4 font-titles">
