@@ -1,5 +1,7 @@
 'use client'
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface Step {
   title: string;
@@ -64,6 +66,14 @@ export function HowItWorks() {
 
             </motion.div>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-8 px-4">
+          <Button asChild variant="secondary" className="w-full md:w-auto" size="lg">
+            <Link href="https://forms.gle/ptkwLj4p9Nz6wn3B8" target="_blank">
+              ¡Quiero referir un cliente!
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

@@ -52,7 +52,7 @@ export function Hero() {
             viewport={{ once: true }}
             className="flex flex-col md:flex-row gap-4 justify-center">
             <Button asChild>
-              <Link href="#contact">
+              <Link href="https://forms.gle/ptkwLj4p9Nz6wn3B8" target="_blank">
                 ¡Quiero referir un cliente!
               </Link>
             </Button>
