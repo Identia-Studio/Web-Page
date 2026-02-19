@@ -59,8 +59,6 @@ export function HowItWorks() {
                 </h4>
                 <p className="md:flex-1 text-gray-900 mb-2 py-4 px-8 text-left justify-self-end">
                   {step.description}
-                  {"\n"}
-                  {step.subtext}
                 </p>
               </div>
 

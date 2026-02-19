@@ -1,6 +1,5 @@
 'use client'
 import { Button } from "@/components/ui/button"
-import { motion } from "motion/react"
 import Link from "next/link"
 
 export function ScheduleCtaSection() {

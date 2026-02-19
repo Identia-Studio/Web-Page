@@ -1,8 +1,4 @@
 
-import AnimatedTitle from "@/components/ui/animated-title"
-import AnimatedBadge from "@/components/ui/animated-badge";
-import AnimatedText from "@/components/ui/animated-text";
-import Calendly from "@/components/calendly";
 import { Hero } from "@/components/sections/referrals/hero";
 import { HowItWorks } from "@/components/sections/referrals/how-it-works";
 import { Benefits } from "@/components/sections/referrals/benefits";
