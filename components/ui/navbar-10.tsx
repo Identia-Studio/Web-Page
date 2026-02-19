@@ -4,11 +4,15 @@ import * as React from 'react';
 import { useRef } from 'react';
 import { motion } from "motion/react"
 import Image from "next/image";
+import Link from 'next/link';
+import { usePathname } from "next/navigation";
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
 import IdentiaLight from '@/assets/images/identia-studio-light.png'
+import { Separator } from './separator';
 
+const activeLink = 'text-yellow-400 px-4 py-2 transition-colors font-medium font-text text-sm'
+const link = 'text-white hover:text-yellow-400 px-4 py-2 transition-colors font-text text-sm'
 export const Navbar10 = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(
   (
     {
@@ -17,6 +21,7 @@ export const Navbar10 = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLE
     },
     ref
   ) => {
+    const pathname = usePathname();
     const containerRef = useRef<HTMLElement>(null);
 
     // Combine refs
@@ -42,14 +47,25 @@ export const Navbar10 = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLE
           {/* Left side */}
           <div className="flex flex-1 items-center gap-2">
             <Image
-                src={IdentiaLight}
-                alt="Identia Studio: Light logo"
-                width={100} 
-                height={50} />
+              src={IdentiaLight}
+              alt="Identia Studio: Light logo"
+              width={100} 
+              height={50} />
           </div>
 
           {/* Right side: Actions */}
           <div className="flex flex-1 items-center justify-end gap-4">
+            <nav className="flex items-center hidden md:inline-flex">
+              <Link href="/" className={pathname == "/" ? activeLink : link}>
+                Inicio
+              </Link>
+              <Link href="/referrals" className={pathname == "/referrals" ? activeLink : link}>
+                Programa de referidos
+              </Link>
+            </nav>
+
+            <Separator orientation='vertical' className="border-yellow-400 " />
+
             <Button
               asChild
             >

@@ -12,6 +12,10 @@ export const metadata = {
   alternates: {
     canonical: '/schedule',
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function Schedule() {
