@@ -3,7 +3,7 @@ import Script from 'next/script';
 import "./globals.css"
 import BaseLayout from "@/components/layout/base_layout";
 import Image from "next/image";
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager  } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: "Identia Studio - Más que desarrollo: identidad digital.",
@@ -67,6 +67,7 @@ export default function RootLayout({
         </noscript>
         {/* <!-- End Meta Pixel Code --> */}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   );
