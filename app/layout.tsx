@@ -26,14 +26,6 @@ export default function RootLayout({
   return (
     <html lang="es" className="dark">
       <head>
-        <Script
-          strategy="afterInteractive"
-          type="text/javascript"
-          data-cmp-ab="1"
-          src="https://cdn.consentmanager.net/delivery/autoblocking/386d2b0a82849.js"
-          data-cmp-host="d.delivery.consentmanager.net"
-          data-cmp-cdn="cdn.consentmanager.net"
-          data-cmp-codesrc="16"></Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link 
@@ -67,7 +59,7 @@ export default function RootLayout({
         </noscript>
         {/* <!-- End Meta Pixel Code --> */}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_ID!} />
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GT_ID!} />
       </body>
     </html>
   );
