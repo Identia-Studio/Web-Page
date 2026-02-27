@@ -1,4 +1,6 @@
 'use client'
+
+import { sendGTMEvent } from '@next/third-parties/google'
 import { motion, Variants } from "motion/react"
 import AnimatedServices from "./services/animated-services";
 import Image, { StaticImageData } from "next/image";
@@ -81,6 +83,14 @@ export function WhatWeDo() {
     },
   ]
 
+  const handleGTMClick = (service: Service) => {
+    sendGTMEvent({
+      event: 'click_service',
+      service_title: service.title,
+      location: 'home_services'
+    })
+  }
+
   return (
     <section className="text-white py-16 px-8 container mx-auto max-w-screen-2xl">
       <div className="">
@@ -156,7 +166,7 @@ export function WhatWeDo() {
                     </Link>
                   </Button>
 
-                  <Button variant="outline" asChild>
+                  <Button variant="outline" asChild onClick={() => {handleGTMClick(service)}}>
                     <Link href={`https://api.whatsapp.com/send?phone=529995446000&text=Hola%2C+me+gustar%C3%ADa+cotizar+un+servicio+de+${service.title.replace(/\s/, '+')}`} target="_blank">
                       Escríbenos por WhatsApp
                       <WhatsappIcon />
