@@ -1,6 +1,7 @@
 'use client'
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 interface Step {
@@ -8,21 +9,25 @@ interface Step {
   description: string;
 }
 
-const STEPS: Step[] = [
+export function HowItWorks() {
+  const t = useTranslations('referrals')
+  const commonT = useTranslations('common')
+
+  const STEPS: Step[] = [
   {
-    title: "Formulario",
-    description: "Envía los datos del cliente referido."
+    title: t('how_it_works.form.title'),
+    description: t('how_it_works.form.description')
   },
   {
-    title: "Contácto",
-    description: "Nosotros contactamos, diagnosticamos y cotizamos."
+    title: t('how_it_works.contact.title'),
+    description: t('how_it_works.contact.description')
   },
   {
-    title: "Pago",
-    description: "Si el proyecto se concreta y paga anticipo, tú recibes tu comisión.",
+    title: t('how_it_works.payment.title'),
+    description: t('how_it_works.payment.description')
   },
 ]
-export function HowItWorks() {
+
   return (
     <section className="bg-yellow-400 text-white py-16">
       <div className="px-8 container mx-auto max-w-screen-2xl">
@@ -33,7 +38,7 @@ export function HowItWorks() {
           transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          ¿Cómo funciona <br /> <span className="text-gray-900">el programa?</span>
+          {t('how_it_works.title')} <br /> <span className="text-gray-900">{t('how_it_works.title2')}</span>
         </motion.h2>
 
       </div>
@@ -69,7 +74,7 @@ export function HowItWorks() {
         <div className="flex justify-center mt-8 px-4">
           <Button asChild variant="secondary" className="w-full md:w-auto" size="lg">
             <Link href="https://forms.gle/ptkwLj4p9Nz6wn3B8" target="_blank">
-              ¡Quiero referir un cliente!
+              {commonT('cta.referral')}
             </Link>
           </Button>
         </div>

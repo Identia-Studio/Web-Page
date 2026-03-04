@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import cruceidse from '@/assets/images/cruceidse-thumbnail.png'
 import redhome from '@/assets/images/redhome-realty.jpg'
 import quickbite from '@/assets/images/quickbite.jpeg'
+import { useTranslations } from "next-intl";
 
 interface PortfolioItem {
   title: string;
@@ -15,20 +16,22 @@ interface PortfolioItem {
 
 
 export function Portfolio() {
+  const t = useTranslations('home')
+
   const SERVICES: PortfolioItem[] = [
     {
-      title: "CruceIDSE",
-      description: "Aplicación web diseñada para comparar información de forma rápida y precisa, optimizando procesos internos y reduciendo errores operativos. Enfocada en rendimiento, claridad de datos y experiencia de usuario.",
+      title: t('portfolio.cruceidse.title'),
+      description: t('portfolio.cruceidse.description'),
       image: cruceidse
     },
     {
-      title: "RedHome Inmobiliaria",
-      description: "Sitio web inmobiliario integrado con EasyBroker, que permite mostrar propiedades actualizadas en tiempo real, gestionar leads descargar fichas y ofrecer una experiencia de búsqueda ágil, visual y optimizada para SEO.",
+      title: t('portfolio.redhome.title'),
+      description: t('portfolio.redhome.description'),
       image: redhome
     },
     {
-      title: "QuickBite",
-      description: "QuickBite es una plataforma de pedidos rápidos para restaurantes y usuarios, con menú en tiempo real, pagos seguros y seguimiento de entrega. Optimiza la operación, reduce tiempos de espera y mejora la experiencia de compra desde móvil y web.",
+      title: t('portfolio.quickBite.title'),
+      description: t('portfolio.quickBite.description'),
       image: quickbite
     },
   ]
@@ -47,7 +50,7 @@ export function Portfolio() {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Nuestro <span className="text-yellow-400">portafolio</span>
+            {t('portfolio.title')} <span className="text-yellow-400">{t('portfolio.title2')}</span>
           </motion.h2>
 
           <motion.p
@@ -57,7 +60,7 @@ export function Portfolio() {
             transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Casos donde diseño y ejecución se convierten en producto.
+            {t('portfolio.description')}
           </motion.p>
         </div>
         <div >
@@ -72,7 +75,7 @@ export function Portfolio() {
                       width={640}
                       height={360}
                       unoptimized={!item.image}
-                      className="rounded-xl max-h-[182px] w-full bg-yellow-400"
+                      className="rounded-xl max-h-[120px] w-full bg-yellow-400"
                     />
                   </CardHeader>
                   <CardContent>

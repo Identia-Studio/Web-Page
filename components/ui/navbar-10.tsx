@@ -4,7 +4,9 @@ import * as React from 'react';
 import { useRef } from 'react';
 import { motion } from "motion/react"
 import Image from "next/image";
-import Link from 'next/link';
+import {useTranslations} from 'next-intl';
+import {Link} from '@/i18n/navigation';
+import NextLink from 'next/link'
 import { usePathname } from "next/navigation";
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -13,6 +15,7 @@ import { Separator } from './separator';
 
 const activeLink = 'text-yellow-400 px-4 py-2 transition-colors font-medium font-text text-sm'
 const link = 'text-white hover:text-yellow-400 px-4 py-2 transition-colors font-text text-sm'
+
 export const Navbar10 = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(
   (
     {
@@ -21,6 +24,7 @@ export const Navbar10 = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLE
     },
     ref
   ) => {
+    const t = useTranslations('common');
     const pathname = usePathname();
     const containerRef = useRef<HTMLElement>(null);
 
@@ -56,11 +60,19 @@ export const Navbar10 = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLE
           {/* Right side: Actions */}
           <div className="flex flex-1 items-center justify-end gap-4">
             <nav className="flex items-center hidden md:inline-flex">
-              <Link href="/" className={pathname == "/" ? activeLink : link}>
-                Inicio
+              <Link
+                aria-current={pathname == "/" ? 'page' : undefined}
+                href="/"
+                className={pathname == "/" ? activeLink : link}
+                >
+                {t('home')}
               </Link>
-              <Link href="/referrals" className={pathname == "/referrals" ? activeLink : link}>
-                Programa de referidos
+              <Link
+                aria-current={pathname == "/" ? 'page' : undefined}
+                href="/referrals"
+                className={pathname == "/referrals" ? activeLink : link}
+              >
+                {t('referrals')}
               </Link>
             </nav>
 
@@ -69,15 +81,15 @@ export const Navbar10 = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLE
             <Button
               asChild
             >
-              <Link href="/#contact">
+              <NextLink href="#contact">
                 <motion.span
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ repeat: Infinity, repeatDelay: 4, duration: .5, ease: "easeInOut"}}
                   className="inline-flex items-center justify-center gap-2 whitespace-nowrap"
                 >
-                  Contáctanos
+                  {t('contact')}
                 </motion.span>
-              </Link>
+              </NextLink>
             </Button>
           </div>
         </div>

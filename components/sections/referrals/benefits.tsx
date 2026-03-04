@@ -2,7 +2,8 @@
 import { Button } from "@/components/ui/button";
 import { Check, Dot } from "lucide-react"
 import { motion, Variants } from "motion/react"
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import {Link} from "@/i18n/navigation";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -21,20 +22,12 @@ const item: Variants = {
 };
 
 export function Benefits() {
-  const BENEFITS: string[] = [
-    'Hasta 15% de comisión por proyecto',
-    'No necesitas vender ni gestionar al cliente',
-    'Nosotros nos encargamos de propuesta y desarrollo',
-    'Pagos puntuales después del anticipo',
-    'Transparencia en todo el proceso',
-  ]
+  const t = useTranslations('referrals')
+  const commonT = useTranslations('common')
 
-  const RULES: string[] = [
-    'Se paga comisión solo si el proyecto cierra y paga anticipo.',
-    'El referidor no negocia precios ni tiempos.',
-    'El proceso comercial lo maneja Identia Studio.',
-    'Identia Studio puede modificar o terminar el programa cuando lo considere necesario.'
-  ]
+  const BENEFITS: string[] = t.raw('benefits.benefits')
+
+  const RULES: string[] = t.raw('benefits.rules')
 
   return (
     <section
@@ -50,7 +43,7 @@ export function Benefits() {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            ¿Qué ganas <br /> <span className="text-yellow-400">como referidor?</span>
+           { t('benefits.title')} <br /> <span className="text-yellow-400">{t('benefits.title2')}</span>
           </motion.h2>
 
         </div>
@@ -82,7 +75,7 @@ export function Benefits() {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Reglas del <br /> <span className="text-yellow-400">programa</span>
+            { t('benefits.rules_title')} <br /> <span className="text-yellow-400">{ t('benefits.rules_title2')}</span>
           </motion.h2>
         </div>
 
@@ -108,7 +101,7 @@ export function Benefits() {
 
         <Button asChild className="mt-10">
           <Link href="/referrals/terms">
-            Ver los Términos y Políticas del Programa de Referidos
+            { commonT('cta.terms')}
           </Link>
         </Button>
       </div>

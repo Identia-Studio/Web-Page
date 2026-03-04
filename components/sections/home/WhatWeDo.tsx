@@ -4,8 +4,9 @@ import { sendGTMEvent } from '@next/third-parties/google'
 import { motion, Variants } from "motion/react"
 import AnimatedServices from "./services/animated-services";
 import Image, { StaticImageData } from "next/image";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
+import { Button } from "@/components/ui/button";
 import WhatsappIcon from "@/components/icons/whatsapp_icon";
 import { Capabilities } from "./services/capabilities";
 import { ScheduleCtaSection } from "../shared/schedule-cta-section";
@@ -40,46 +41,33 @@ const item: Variants = {
 
 
 export function WhatWeDo() {
+  const t = useTranslations('home');
+  const commonT = useTranslations('common');
+
   const SERVICES: Service[] = [
     {
-      title: "Desarrollo Web",
-      description: "Plataformas y sitios listos para producción.",
-      image: desarrollo,
-      features: [
-        'Performance y escalabilidad',
-        'Front + Back (según caso)',
-        'Deploy + QA básico'
-      ]
+      title: t('services.web.title'),
+      description: t('services.web.description'),
+      features: t.raw('services.web.features'),
+      image: desarrollo
     },
     {
-      title: "Apps Móviles",
-      description: "Apps IOS/Android para usuarios reales.",
-      image: apps,
-      features: [
-        'Auth, perfiles, notificaciones',
-        'Integraciones (pagos/APIs)',
-        'Publicación y soporte'
-      ]
+      title: t('services.mobile_app.title'),
+      description: t('services.mobile_app.description'),
+      features: t.raw('services.mobile_app.features'),
+      image: apps
     },
     {
-      title: "UI/UX Design",
-      description: "Experiencias claras que se sienten premium.",
+      title: t('services.ui_design.title'),
+      description: t('services.ui_design.description'),
+      features: t.raw('services.ui_design.features'),
       image: ui,
-      features: [
-        'Flujos + prototipos',
-        'UI final + componentes',
-        'Handoff para desarrollo'
-      ]
     },
     {
-      title: "Branding",
-      description: "Identidad visual consistente para producto y marketing.",
+      title: t('services.branding.title'),
+      description: t('services.branding.description'),
+      features: t.raw('services.branding.features'),
       image: branding,
-      features: [
-        'Sistema visual (no solo logotipo)',
-        'Guía rápída + assets',
-        'Consistencia web/app/redes'
-      ]
     },
   ]
 
@@ -102,7 +90,7 @@ export function WhatWeDo() {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Nuestros <span className="text-yellow-400">servicios</span>
+            {t('services.title')} <span className="text-yellow-400">{t('services.title2')}</span>
           </motion.h2>
 
           <motion.p
@@ -112,7 +100,7 @@ export function WhatWeDo() {
             transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Diseñamos experiencias simples y construimos producto real para mejorar conversión y retención.
+            {t('services.description')}
           </motion.p>
         </div>
         <div >
@@ -162,13 +150,13 @@ export function WhatWeDo() {
                   className="flex flex-col lg:flex-row gap-4">
                   <Button asChild>
                     <Link href="#contact">
-                      Solicitar propuesta
+                      {commonT('cta.proposal')}
                     </Link>
                   </Button>
 
                   <Button variant="outline" asChild onClick={() => {handleGTMClick(service)}}>
                     <Link href={`https://api.whatsapp.com/send?phone=529995446000&text=Hola%2C+me+gustar%C3%ADa+cotizar+un+servicio+de+${service.title.replace(/\s/, '+')}`} target="_blank">
-                      Escríbenos por WhatsApp
+                      {commonT('cta.whatsapp')}
                       <WhatsappIcon />
                     </Link>
                   </Button>

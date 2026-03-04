@@ -5,11 +5,14 @@ import { Button } from "@/components/ui/button"
 import { motion } from "motion/react"
 import Image from "next/image"
 import Link from "next/link"
+import { useTranslations } from 'next-intl';
 import Vector2 from '@/assets/images/vector-2.png'
 import Icosahedron from '@/assets/images/Icosahedron.png'
 
 
 export function Hero() {
+  const t = useTranslations('home');
+  const commonT = useTranslations('common');
   return (
     <section className="pb-16 px-8 container mx-auto max-w-screen-2xl">
       <div className="flex flex-col-reverse md:flex-row gap-4 items-center">
@@ -24,7 +27,7 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            De idea a producto: <span className="text-yellow-400">lanza rápido</span>, crece con calidad.
+           {t('hero.title')} <span className="text-yellow-400"> {t('hero.title2')}</span>
           </motion.h1>
           
           <motion.p
@@ -34,7 +37,7 @@ export function Hero() {
             transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Diseño + desarrollo + IA para construir productos digitales claros, rápidos y escalables.
+            {t('hero.description')}
           </motion.p>
 
           <motion.div
@@ -45,13 +48,13 @@ export function Hero() {
             className="flex flex-col md:flex-row gap-4">
             <Button asChild>
               <Link href="#contact">
-                Agendar llamada
+                {commonT('cta.schedule')}
               </Link>
             </Button>
 
             <Button variant="outline" asChild>
               <Link href="https://api.whatsapp.com/send?phone=529995446000&text=Hola%2C+me+gustar%C3%ADa+cotizar+un+servicio." target="_blank">
-                Escríbenos por WhatsApp
+                {commonT('cta.whatsapp')}
                 <WhatsappIcon />
               </Link>
             </Button>
