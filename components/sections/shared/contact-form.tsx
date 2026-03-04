@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { z } from "zod"
+import {useTranslations} from 'next-intl';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Spinner } from "@/components/ui/spinner"
 import {
@@ -23,6 +24,7 @@ const formSchema = z.object({
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const t = useTranslations('common');
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -65,7 +67,7 @@ export default function ContactForm() {
   return (
     <div className="mb-8 md:mb-0">
       <h3 className="text-4xl uppercase mb-4 font-bold">
-        <span className="font-titles text-yellow-400">Contáctanos</span> para más información
+        <span className="font-titles text-yellow-400">{t('contact_form.title')}</span> {t('contact_form.title2')}
       </h3>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
@@ -75,7 +77,7 @@ export default function ContactForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="Nombre completo *" required {...field} className="border-0 " />
+                  <Input placeholder={t('contact_form.name')} required {...field} className="border-0 " />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -88,7 +90,7 @@ export default function ContactForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="Correo electrónico *" type="email" required {...field} className="border-0 " />
+                  <Input placeholder={t('contact_form.email')} type="email" required {...field} className="border-0 " />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -101,7 +103,7 @@ export default function ContactForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Textarea placeholder="Mensaje" {...field} className="border-0"/>
+                  <Textarea placeholder={t('contact_form.message')} {...field} className="border-0"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -110,7 +112,7 @@ export default function ContactForm() {
           <div className="flex flex-col-reverse md:flex-row md:justify-end gap-4">
             {sent && (
               <div className="flex-1 mt-4 md:mt-0">
-                <p>Tu mensaje ha sido enviado correctamente.</p>
+                <p>{t('contact_form.success')}</p>
               </div>
             )}
             <div>
@@ -124,7 +126,7 @@ export default function ContactForm() {
                 {loading && (
                   <Spinner />
                 )}
-                Contáctanos
+                {t('contact')}
               </motion.button>
             </div>
 

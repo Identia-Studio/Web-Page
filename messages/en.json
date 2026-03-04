@@ -1,0 +1,191 @@
+{
+  "home": {
+    "meta": {
+      "title": "Identia Studio - More than development: digital identity.",
+      "description": "We create attractive and modern web experiences that drive your business growth. From design to development, we bring your vision to life.",
+      "openGraph": {
+        "description": "Custom web development and digital solutions."
+      }
+    },
+    "hero": {
+      "title": "From idea to product:",
+      "title2": "launch fast, grow with quality.",
+      "description": "Design + development + AI to build clear, fast, and scalable digital products."
+    },
+    "services": {
+      "title": "Our",
+      "title2": "services",
+      "description": "We design simple experiences and build real products to improve conversion and retention.",
+      "web": {
+        "title": "Web Development",
+        "description": "Production-ready platforms and websites.",
+        "features": [
+          "Performance and scalability",
+          "Front + Back (as needed)",
+          "Deploy + basic QA"
+        ]
+      },
+      "mobile_app": {
+        "title": "Mobile Apps",
+        "description": "iOS/Android apps for real users.",
+        "features": [
+          "Auth, profiles, notifications",
+          "Integrations (payments/APIs)",
+          "Publishing and support"
+        ]
+      },
+      "ui_design": {
+        "title": "UI/UX Design",
+        "description": "Clear experiences that feel premium.",
+        "features": [
+          "Flows + prototypes",
+          "Final UI + components",
+          "Development handoff"
+        ]
+      },
+      "branding": {
+        "title": "Branding",
+        "description": "Consistent visual identity for product and marketing.",
+        "features": [
+          "Visual system (not just a logo)",
+          "Quick guide + assets",
+          "Web/app/social consistency"
+        ]
+      },
+      "capabilities": {
+        "title": "Technical capabilities",
+        "description": "Integrated based on scope. We recommend what you need for your stage (MVP, growth, or redesign).",
+        "apis": "API Development",
+        "integrations": "Integrations",
+        "security": "Security Scan",
+        "automatizations": "Automations",
+        "ai": "Artificial Intelligence",
+        "seo": "SEO Audit"
+      }
+    },
+    "how_we_work": {
+      "title": "Our",
+      "title2": "process",
+      "description": "A simple process with clear deliverables at every stage.",
+      "onboarding": {
+        "title": "Onboarding",
+        "description": "We align on goals, scope, timelines, and definition",
+        "subtext": "of success."
+      },
+      "discovery": {
+        "title": "Discovery",
+        "description": "We understand users, business, and market. We prioritize what",
+        "subtext": "drives the product."
+      },
+      "moodboard": {
+        "title": "Moodboard",
+        "description": "We explore visual direction + experience. Navigable prototype",
+        "subtext": "to validate quickly."
+      },
+      "refining": {
+        "title": "Refining",
+        "description": "We iterate with feedback, refine UX/UI, and define the",
+        "subtext": "component system."
+      },
+      "deliver": {
+        "title": "Deliver",
+        "description": "We deliver design + build, documentation, and",
+        "subtext": "launch support."
+      }
+    },
+    "portfolio": {
+      "title": "Our",
+      "title2": "portfolio",
+      "description": "Cases where design and execution become product.",
+      "cruceidse": {
+        "title": "CruceIDSE",
+        "description": "Web application designed to compare information quickly and accurately, optimizing internal processes and reducing operational errors. Focused on performance, data clarity, and user experience."
+      },
+      "redhome": {
+        "title": "RedHome Real Estate",
+        "description": "Web application designed to compare information quickly and accurately, optimizing internal processes and reducing operational errors. Focused on performance, data clarity, and user experience."
+      },
+      "quickBite": {
+        "title": "QuickBite",
+        "description": "QuickBite is a fast ordering platform for restaurants and users, featuring real-time menus, secure payments, and delivery tracking. It optimizes operations, reduces wait times, and improves the purchasing experience from mobile and web."
+      }
+    }
+  },
+  "referrals": {
+    "title": "Become an",
+    "title2": "Identia Studio",
+    "title3": "Partner",
+    "subtext": "Earn up to 15% for referring clients.",
+    "description": "Refer companies or entrepreneurs who need digital solutions and receive a commission when their project is confirmed.",
+    "description2": "You only refer, we handle everything else.",
+    "how_it_works": {
+      "title": "How does",
+      "title2": "the program work?",
+      "form": {
+        "title": "Form",
+        "description": "Submit the referred client's information."
+      },
+      "contact": {
+        "title": "Contact",
+        "description": "We contact them, diagnose, and provide a quote."
+      },
+      "payment": {
+        "title": "Payment",
+        "description": "If the project is confirmed and pays a deposit, you receive your commission."
+      }
+    },
+    "benefits": {
+      "title": "What do you gain",
+      "title2": "as a referrer?",
+      "rules_title": "Program",
+      "rules_title2": "rules",
+      "benefits": [
+        "Up to 15% commission per project",
+        "You don’t need to sell or manage the client",
+        "We handle the proposal and development",
+        "On-time payments after deposit",
+        "Full transparency throughout the process"
+      ],
+      "rules": [
+        "Commission is paid only if the project closes and pays a deposit.",
+        "The referrer does not negotiate prices or timelines.",
+        "The sales process is handled by Identia Studio.",
+        "Identia Studio may modify or terminate the program when deemed necessary."
+      ]
+    },
+    "questions": {
+      "title": "Not sure how it works?",
+      "description": "Message us on WhatsApp and we’ll explain step by step how you can earn with our program."
+    }
+  },
+  "shared": {
+    "cta_section": {
+      "title": "Not sure what you need?",
+      "description": "Schedule a 15-min call and we’ll propose the shortest path forward."
+    }
+  },
+  "common": {
+    "home": "Home",
+    "referrals": "Referral Program",
+    "contact": "Contact Us",
+    "address": "Address",
+    "office": "Office",
+    "email": "Email",
+    "slogan": "Digital identity.",
+    "contact_form": {
+      "title": "Contact Us",
+      "title2": "for more information",
+      "name": "Full name *",
+      "email": "Email address *",
+      "message": "Message",
+      "success": "Your message has been sent successfully."
+    },
+    "cta": {
+      "schedule": "Schedule a call",
+      "whatsapp": "Message us on WhatsApp",
+      "proposal": "Request a proposal",
+      "referral": "I want to refer a client!",
+      "terms": "View Referral Program Terms and Policies"
+    }
+  }
+}

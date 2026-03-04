@@ -1,9 +1,16 @@
-// app/sitemap.ts
-export default function sitemap() {
-  return [
-    { url: 'https://www.identiastudio.com/', priority: 1 },
-    { url: 'https://www.identiastudio.com/schedule', priority: 0.8 },
-    { url: 'https://www.identiastudio.com/referrals', priority: 0.8 },
-    { url: 'https://www.identiastudio.com/referrals/terms', priority: 0.8 },
-  ];
+import { MetadataRoute } from 'next';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://www.identiastudio.com';
+  const locales = ['en', 'es'];
+  const routes = ['', '/referrals', '/referrals/terms'];
+
+  return routes.flatMap(route =>
+    locales.map(locale => ({
+      url: `${baseUrl}/${locale}${route}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: route === '' ? 1 : 0.8
+    }))
+  );
 }

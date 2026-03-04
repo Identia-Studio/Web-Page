@@ -2,6 +2,7 @@
 import { ReactNode } from 'react';
 import { motion } from "framer-motion";
 import { Rocket, Search, Handshake, Paintbrush, Pencil } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 interface Step {
   title: string;
@@ -10,39 +11,43 @@ interface Step {
   icon: ReactNode
 }
 
-const STEPS: Step[] = [
+export function HowWeWork() {
+  const t = useTranslations('home')
+
+  // TODO: extract to file
+  const STEPS: Step[] = [
   {
-    title: "Onboarding",
-    description: "Nos alineamos en objetivo, alcance, tiempos y definición",
-    subtext: "de éxito.",
+    title: t('how_we_work.onboarding.title'),
+    description: t('how_we_work.onboarding.description'),
+    subtext: t('how_we_work.onboarding.subtext'),
     icon: <Handshake className="w-6 h-6 text-black" />
   },
   {
-    title: "Discovery",
-    description: "Entendemos usuario, negocio y mercado. Priorizamos lo",
-    subtext: "que mueve el producto.",
+    title: t('how_we_work.discovery.title'),
+    description: t('how_we_work.discovery.description'),
+    subtext: t('how_we_work.discovery.subtext'),
     icon: <Search className="w-6 h-6 text-black" />
   },
   {
-    title: "Moodboard",
-    description: "Exploramos dirección visual + experiencia. Prototipo",
-    subtext: "navegable para validar rápido.",
+    title: t('how_we_work.moodboard.title'),
+    description: t('how_we_work.moodboard.description'),
+    subtext: t('how_we_work.moodboard.subtext'),
     icon: <Paintbrush className="w-6 h-6 text-black" />
   },
   {
-    title: "Refining",
-    description: "Iteramos con feedback, afinamos UX/UI y definimos el",
-    subtext: "sistema de componentes.",
+    title: t('how_we_work.refining.title'),
+    description: t('how_we_work.refining.description'),
+    subtext: t('how_we_work.refining.subtext'),
     icon: <Pencil className="w-6 h-6 text-black" />
   },
   {
-    title: "Deliver",
-    description: "Entregamos diseño + build, documentación y soporte de",
-    subtext: "lanzamiento.",
+    title: t('how_we_work.deliver.title'),
+    description: t('how_we_work.deliver.description'),
+    subtext: t('how_we_work.deliver.subtext'),
     icon: <Rocket className="w-6 h-6 text-black" />
   }
 ]
-export function HowWeWork() {
+
   return (
     <section className="bg-yellow-400 text-white py-16">
       <div className="px-8 container mx-auto max-w-screen-2xl">
@@ -53,7 +58,7 @@ export function HowWeWork() {
           transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Nuestro <span className="text-gray-900">proceso</span>
+          {t('how_we_work.title')} <span className="text-gray-900">{t('how_we_work.title2')}</span>
         </motion.h2>
 
         <motion.p
@@ -63,7 +68,7 @@ export function HowWeWork() {
           transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Un proceso simple, con entregables claros en cada etapa.
+          {t('how_we_work.description')}
         </motion.p>
       </div>
       <div>

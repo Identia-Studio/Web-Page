@@ -1,0 +1,191 @@
+{
+  "home": {
+    "meta": {
+      "title": "Identia Studio - Más que desarrollo: identidad digital.",
+      "description": "Creamos experiencias web atractivas y modernas que impulsan el crecimiento de tu negocio. Desde el diseño hasta el desarrollo, hacemos realidad tu visión.",
+      "openGraph": {
+        "description": "Desarrollo web y soluciones digitales a la medida."
+      }
+    },
+    "hero": {
+      "title": "De idea a producto:",
+      "title2": "lanza rápido, crece con calidad.",
+      "description": "Diseño + desarrollo + IA para construir productos digitales claros, rápidos y escalables."
+    },
+    "services": {
+      "title": "Nuestros",
+      "title2": "servicios",
+      "description": "Diseñamos experiencias simples y construimos producto real para mejorar conversión y retención.",
+      "web": {
+        "title": "Desarrollo Web",
+        "description": "Plataformas y sitios listos para producción.",
+        "features": [
+          "Performance y escalabilidad",
+          "Front + Back (según caso)",
+          "Deploy + QA básico"
+        ]
+      },
+      "mobile_app": {
+        "title": "Apps Móviles",
+        "description": "Apps IOS/Android para usuarios reales.",
+        "features": [
+          "Auth, perfiles, notificaciones",
+          "Integraciones (pagos/APIs)",
+          "Publicación y soporte"
+        ]
+      },
+      "ui_design": {
+        "title": "UI/UX Design",
+        "description": "Experiencias claras que se sienten premium.",
+        "features": [
+          "Flujos + prototipos",
+          "UI final + componentes",
+          "Handoff para desarrollo"
+        ]
+      },
+      "branding": {
+        "title": "Branding",
+        "description": "Identidad visual consistente para producto y marketing.",
+        "features": [
+          "Sistema visual (no solo logotipo)",
+          "Guía rápída + assets",
+          "Consistencia web/app/redes"
+        ]
+      },
+      "capabilities": {
+        "title": "Capacidades técnicas",
+        "description": "Se integran según el alcance. Te recomendamos lo necesario para tu etapa (MVP, crecimiento o rediseño).",
+        "apis": "Desarrollo de APIs",
+        "integrations": "Integraciones",
+        "security": "Security Scan",
+        "automatizations": "Automatizaciones",
+        "ai": "Inteligencia Artificial",
+        "seo": "Diagnóstico SEO"
+      }
+    },
+    "how_we_work": {
+      "title": "Nuestro",
+      "title2": "proceso",
+      "description": "Un proceso simple, con entregables claros en cada etapa.",
+      "onboarding": {
+        "title": "Onboarding",
+        "description": "Nos alineamos en objetivo, alcance, tiempos y definición",
+        "subtext": "de éxito."
+      },
+      "discovery": {
+        "title": "Discovery",
+        "description": "Entendemos usuario, negocio y mercado. Priorizamos lo",
+        "subtext": "que mueve el producto."
+      },
+      "moodboard": {
+        "title": "Moodboard",
+        "description": "Exploramos dirección visual + experiencia. Prototipo",
+        "subtext": "navegable para validar rápido."
+      },
+      "refining": {
+        "title": "Refining",
+        "description": "Iteramos con feedback, afinamos UX/UI y definimos el",
+        "subtext": "sistema de componentes."
+      },
+      "deliver": {
+        "title": "Deliver",
+        "description": "Entregamos diseño + build, documentación y soporte de",
+        "subtext": "lanzamiento."
+      }
+    },
+    "portfolio": {
+      "title": "Nuestro",
+      "title2": "portafolio",
+      "description": "Casos donde diseño y ejecución se convierten en producto.",
+      "cruceidse": {
+        "title": "CruceIDSE",
+        "description": "Aplicación web diseñada para comparar información de forma rápida y precisa, optimizando procesos internos y reduciendo errores operativos. Enfocada en rendimiento, claridad de datos y experiencia de usuario."
+      },
+      "redhome": {
+        "title": "RedHome Inmobiliaria",
+        "description": "Aplicación web diseñada para comparar información de forma rápida y precisa, optimizando procesos internos y reduciendo errores operativos. Enfocada en rendimiento, claridad de datos y experiencia de usuario."
+      },
+      "quickBite": {
+        "title": "QuickBite",
+        "description": "QuickBite es una plataforma de pedidos rápidos para restaurantes y usuarios, con menú en tiempo real, pagos seguros y seguimiento de entrega. Optimiza la operación, reduce tiempos de espera y mejora la experiencia de compra desde móvil y web."
+      }
+    }
+  },
+  "referrals": {
+    "title": "Conviértete en",
+    "title2": "Aliado",
+    "title3": "de Identia Studio",
+    "subtext": "Gana hasta 15% por recomendar clientes.",
+    "description": "Recomienda empresas o emprendedores que necesiten soluciones digitales y recibe comisión cuando su proyecto se concrete.",
+    "description2": "Tú solo refieres, nosotros hacemos todo lo demás.",
+    "how_it_works": {
+      "title": "¿Cómo funciona",
+      "title2": "el programa?",
+      "form": {
+        "title": "Formulario",
+        "description": "Envía los datos del cliente referido."
+      },
+      "contact": {
+        "title": "Contácto",
+        "description": "Nosotros contactamos, diagnosticamos y cotizamos."
+      },
+      "payment": {
+        "title": "Pago",
+        "description": "Si el proyecto se concreta y paga anticipo, tú recibes tu comisión."
+      }
+    },
+    "benefits": {
+      "title": "¿Qué ganas",
+      "title2": "como referidor?",
+      "rules_title": "Reglas del",
+      "rules_title2": "programa",
+      "benefits": [
+        "Hasta 15% de comisión por proyecto",
+        "No necesitas vender ni gestionar al cliente",
+        "Nosotros nos encargamos de propuesta y desarrollo",
+        "Pagos puntuales después del anticipo",
+        "Transparencia en todo el proceso"
+      ],
+      "rules": [
+        "Se paga comisión solo si el proyecto cierra y paga anticipo.",
+        "El referidor no negocia precios ni tiempos.",
+        "El proceso comercial lo maneja Identia Studio.",
+        "Identia Studio puede modificar o terminar el programa cuando lo considere necesario."
+      ]
+    },
+    "questions": {
+      "title": "¿No estás seguro de cómo funciona?",
+      "description": "Escríbenos por WhatsApp y te explicamos paso a paso cómo puedes ganar con nuestro programa."
+    }
+  },
+  "shared": {
+    "cta_section": {
+      "title": "¿No sabes qué necesitas?",
+      "description": "Agenda una llamada de 15 min y te propones la ruta más corta."
+    }
+  },
+  "common": {
+    "home": "Inicio",
+    "referrals": "Programa de referidos",
+    "contact": "Contáctanos",
+    "address": "Dirección",
+    "office": "Oficina",
+    "email": "Correo Electrónico",
+    "slogan": "Identidad digital.",
+    "contact_form": {
+      "title": "Contáctanos",
+      "title2": "para más información",
+      "name": "Nombre completo *",
+      "email": "Correo electrónico *",
+      "message": "Mensaje",
+      "success": "Tu mensaje ha sido enviado correctamente."
+    },
+    "cta": {
+      "schedule": "Agendar llamada",
+      "whatsapp": "Escríbenos por WhatsApp",
+      "proposal": "Solicitar propuesta",
+      "referral": "¡Quiero referir un cliente!",
+      "terms": "Ver los Términos y Políticas del Programa de Referidos"
+    }
+  }
+}

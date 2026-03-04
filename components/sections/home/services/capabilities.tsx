@@ -8,6 +8,7 @@ import automatizaciones from '@/assets/images/services/automatizaciones.png'
 import inteligenciaartificial from '@/assets/images/services/inteligencia-artificial.png'
 import diagnosticoseo from '@/assets/images/services/diagnostico-seo.png'
 import capacidades from '@/assets/images/services/capacidades-tecnicas.png'
+import { useTranslations } from "next-intl";
 
 
 interface Capability {
@@ -33,29 +34,31 @@ const item: Variants = {
 
 
 export function Capabilities() {
+  const t = useTranslations('home');
+
   const capabilities: Capability[] = [
     {
-      title: "Desarrollo de APIs",
+      title: t('services.capabilities.apis'),
       icon: desarrolloapis
     },
     {
-      title: "Integraciones",
+      title: t('services.capabilities.integrations'),
       icon: integraciones
     },
     {
-      title: "Security Scan",
+      title: t('services.capabilities.security'),
       icon: securityscan
     },
     {
-      title: "Automatizaciones",
+      title: t('services.capabilities.automatizations'),
       icon: automatizaciones
     },
     {
-      title: "Inteligencia Artificial",
+      title: t('services.capabilities.ai'),
       icon: inteligenciaartificial
     },
     {
-      title: "Diagnóstico SEO",
+      title: t('services.capabilities.seo'),
       icon: diagnosticoseo
     },
   ]
@@ -74,7 +77,7 @@ export function Capabilities() {
         >
           <Image
             src={capacidades}
-            alt="Capacidades técnicas"
+            alt={t('services.capabilities.title')}
             className="object-cover"
             width={70}
             height={70}
@@ -89,7 +92,7 @@ export function Capabilities() {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Capacidades técnicas
+            {t('services.capabilities.title')}
           </motion.h3>
           <motion.p
             className="text-gray-300 text-xs leading-relaxed font-text font-medium"
@@ -98,7 +101,7 @@ export function Capabilities() {
             transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Se integran según el alcance. Te recomendamos lo necesario para tu etapa (MVP, crecimiento o rediseño).
+            {t('services.capabilities.description')}
           </motion.p>
         </div>
       </div>

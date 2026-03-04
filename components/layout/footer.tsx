@@ -1,6 +1,7 @@
 import { MailIcon, MapPin, PhoneCallIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link"
+import {useTranslations} from 'next-intl';
 import { Parallax } from 'react-scroll-parallax';
 import ContactForm from "../sections/shared/contact-form";
 import IdentiaLight from '@/assets/images/identia-studio-light.png'
@@ -9,6 +10,7 @@ import instagram from '@/assets/images/instagram.svg'
 import facebook from '@/assets/images/facebook.svg'
 
 export function Footer() {
+  const t = useTranslations('common');
   return (
     <Parallax>
       <footer className="container mx-auto max-w-screen-2xl py-40 px-8" id="contact">
@@ -25,7 +27,7 @@ export function Footer() {
               <MapPin className="text-yellow-400 w-[16px]" />
               <div className="grid gap-2">
                 <p className="block text-yellow-400 transition-colors font-titles">
-                  Dirección
+                  {t('address')}
                 </p>
                 <Link
                   href="tel:+529995446000"
@@ -40,7 +42,7 @@ export function Footer() {
               <PhoneCallIcon className="text-yellow-400 w-[16px]" />
               <div className="grid gap-2">
                 <p className="block text-yellow-400 transition-colors font-titles">
-                  Oficina
+                  {t('office')}
                 </p>
                 <Link
                   href="tel:+529995446000"
@@ -55,7 +57,7 @@ export function Footer() {
               <MailIcon className="text-yellow-400 w-[16px]" />
               <div className="grid gap-2">
                 <p className="block text-yellow-400 transition-colors font-titles">
-                  Correo Electrónico
+                  {t('email')}
                 </p>
                 <Link
                   href="mailto:identiastudio25@gmail.com"
@@ -116,7 +118,7 @@ export function Footer() {
         </div>
         <div className="w-full">
             <p className="text-gray-400 text-sm font-titles mt-4 text-center">
-            {new Date().getFullYear()} &copy; <strong>Identidad digital.</strong>
+            {new Date().getFullYear()} &copy; <strong>{t('slogan')}</strong>
           </p>
         </div>
       </footer>
