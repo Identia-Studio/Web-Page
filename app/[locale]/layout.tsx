@@ -6,7 +6,11 @@ import BaseLayout from "@/components/layout/base_layout";
 import Image from "next/image";
 import { GoogleAnalytics, GoogleTagManager  } from '@next/third-parties/google'
 
-export async function generateMetadata({ params }) {
+interface GenerateMetadataProps {
+  params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata({ params }: GenerateMetadataProps) {
   const { locale } = await params;
 
   const baseUrl = 'https://www.identiastudio.com';

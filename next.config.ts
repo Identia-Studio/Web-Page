@@ -5,9 +5,6 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [new URL('https://placehold.co/600x450')],
   },
-  experimental: {
-    serverActions: true
-  }
 };
 
 const withNextIntl = createNextIntlPlugin(
