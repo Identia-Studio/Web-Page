@@ -17,7 +17,9 @@ export const routing = defineRouting({
     // '/ux-design': {
     //   es: '/diseno-ux'
     // },
-    // '/branding': '/branding',
+    // '/branding': {
+    //    es: '/branding'
+    // },
     '/referrals': {
       es: '/referidos'
     },
