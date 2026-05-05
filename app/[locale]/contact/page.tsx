@@ -10,7 +10,7 @@ const localBusinessSchema = {
   image: `${BASE_URL}/favicon.png`,
   url: BASE_URL,
   telephone: '+52 999 544 6000',
-  email: 'identiastudio25@gmail.com',
+  email: 'hola@identiastudio.com',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Los Héroes',
@@ -21,10 +21,10 @@ const localBusinessSchema = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 21.01234,
-    longitude: -89.62345,
+    latitude: 20.9882745,
+    longitude: -89.5316852,
   },
-  hasMap: `https://maps.google.com/maps?q=21.01234,-89.62345`,
+  hasMap: `https://maps.google.com/maps?q=20.9882745,-89.5316852`,
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',

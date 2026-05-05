@@ -43,6 +43,7 @@ const organizationSchema = {
   name: 'Identia Studio',
   url: 'https://www.identiastudio.com',
   telephone: '+52 999 544 6000',
+  email: 'hola@identiastudio.com',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Los Héroes',
@@ -50,6 +51,11 @@ const organizationSchema = {
     addressRegion: 'Yucatán',
     postalCode: '97306',
     addressCountry: 'MX',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 20.9882745,
+    longitude: -89.5316852,
   },
   areaServed: { '@type': 'City', name: 'Mérida' },
   sameAs: [
