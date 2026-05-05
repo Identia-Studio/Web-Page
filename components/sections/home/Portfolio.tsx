@@ -71,7 +71,7 @@ export function Portfolio() {
                   <CardHeader>
                     <Image
                       src={item.image ? item.image : 'https://placehold.co/640x360'}
-                      alt="item.title"
+                      alt={item.title}
                       width={640}
                       height={360}
                       unoptimized={!item.image}

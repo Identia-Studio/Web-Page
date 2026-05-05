@@ -1,0 +1,25 @@
+# Identia Studio
+> Agencia de diseño, desarrollo e IA en Mérida, Yucatán, México. Construimos productos digitales claros, rápidos y escalables.
+
+## Services
+- Web Development: production-ready websites and platforms
+- Mobile Apps: iOS/Android apps for real users
+- UI/UX Design: clear experiences that feel premium
+- Branding: visual identity and brand strategy
+- AI Integration: AI-powered features for digital products
+
+## Pages
+- [Home (ES)](/es)
+- [Home (EN)](/en)
+- [Referral Program (ES)](/es/referidos)
+- [Referral Program (EN)](/en/referrals)
+- [Referral Terms (ES)](/es/referidos/terminos)
+- [Referral Terms (EN)](/en/referrals/terms)
+
+## Contact
+- Phone: +52 999 544 6000
+- WhatsApp: https://api.whatsapp.com/send?phone=529995446000
+- Address: Los Héroes, Mérida, Yucatán, México. C.P. 97306
+- LinkedIn: https://www.linkedin.com/company/identia-studio-mid
+- Instagram: https://instagram.com/identia.studio.mid
+- Facebook: https://www.facebook.com/identia.studio

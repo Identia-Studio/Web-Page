@@ -27,11 +27,21 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-           {t('hero.title')} <span className="text-yellow-400"> {t('hero.title2')}</span>
+            {t('hero.title')} <span className="text-yellow-400">{t('hero.title2')}</span>
           </motion.h1>
-          
+
           <motion.p
-            className="text-md md:text-lg text-gray-300 max-w-2xl leading-relaxed font-titles mb-8"
+            className="text-xl md:text-2xl text-gray-300 max-w-2xl font-titles font-semibold mt-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.55, duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            {t('hero.tagline')}
+          </motion.p>
+
+          <motion.p
+            className="text-md md:text-lg text-gray-300 max-w-2xl leading-relaxed font-titles mb-8 mt-3"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}

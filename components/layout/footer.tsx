@@ -60,10 +60,10 @@ export function Footer() {
                   {t('email')}
                 </p>
                 <Link
-                  href="mailto:identiastudio25@gmail.com"
+                  href="mailto:hola@identiastudio.com"
                   className="block text-white hover:text-yellow-400 transition-colors font-titles"
                 >
-                  identiastudio25@gmail.com
+                  hola@identiastudio.com
                 </Link>
               </div>
             </div>

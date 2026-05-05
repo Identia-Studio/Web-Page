@@ -8,8 +8,9 @@
       }
     },
     "hero": {
-      "title": "De idea a producto:",
-      "title2": "lanza rápido, crece con calidad.",
+      "title": "Agencia digital",
+      "title2": "en Mérida, Yucatán",
+      "tagline": "De idea a producto: lanza rápido, crece con calidad.",
       "description": "Diseño + desarrollo + IA para construir productos digitales claros, rápidos y escalables."
     },
     "services": {
@@ -163,6 +164,21 @@
       "title": "¿No sabes qué necesitas?",
       "description": "Agenda una llamada de 15 min y te propones la ruta más corta."
     }
+  },
+  "contact": {
+    "hero_title": "Visítanos o",
+    "hero_title2": "escríbenos",
+    "hero_description": "Estamos en Mérida, Yucatán. Agenda una asesoría gratuita, escríbenos por WhatsApp o llámanos directamente.",
+    "hours_title": "Horario de atención",
+    "weekdays": "Lunes – Viernes",
+    "weekdays_hours": "9:00 – 18:00",
+    "saturday": "Sábado",
+    "saturday_hours": "10:00 – 14:00",
+    "sunday": "Domingo",
+    "sunday_hours": "Cerrado",
+    "timezone": "Hora Centro (CST, GMT-6)",
+    "get_directions": "Cómo llegar",
+    "map_title": "Ubicación de Identia Studio en Mérida, Yucatán"
   },
   "common": {
     "home": "Inicio",

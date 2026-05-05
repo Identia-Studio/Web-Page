@@ -5,6 +5,6 @@ export default function robots() {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://identiastudio.com/sitemap.xml',
+    sitemap: 'https://www.identiastudio.com/sitemap.xml',
   };
 }

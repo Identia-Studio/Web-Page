@@ -5,6 +5,21 @@ export const routing = defineRouting({
   defaultLocale: 'en',
   pathnames: {
     '/': '/',
+    '/contact': {
+      es: '/contacto'
+    },
+    // '/web-development': {
+    //   es: '/desarrollo-web-merida'
+    // },
+    // '/mobile-apps': {
+    //   es: '/apps-moviles'
+    // },
+    // '/ux-design': {
+    //   es: '/diseno-ux'
+    // },
+    // '/branding': {
+    //    es: '/branding'
+    // },
     '/referrals': {
       es: '/referidos'
     },

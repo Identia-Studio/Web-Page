@@ -8,8 +8,9 @@
       }
     },
     "hero": {
-      "title": "From idea to product:",
-      "title2": "launch fast, grow with quality.",
+      "title": "Digital agency",
+      "title2": "in Mérida, Yucatán",
+      "tagline": "From idea to product: launch fast, grow with quality.",
       "description": "Design + development + AI to build clear, fast, and scalable digital products."
     },
     "services": {
@@ -163,6 +164,21 @@
       "title": "Not sure what you need?",
       "description": "Schedule a 15-min call and we’ll propose the shortest path forward."
     }
+  },
+  "contact": {
+    "hero_title": "Visit us or",
+    "hero_title2": "get in touch",
+    "hero_description": "We're based in Mérida, Yucatán. Schedule a free consultation, message us on WhatsApp, or call us directly.",
+    "hours_title": "Business hours",
+    "weekdays": "Monday – Friday",
+    "weekdays_hours": "9:00 AM – 6:00 PM",
+    "saturday": "Saturday",
+    "saturday_hours": "10:00 AM – 2:00 PM",
+    "sunday": "Sunday",
+    "sunday_hours": "Closed",
+    "timezone": "Central Time (CST, GMT-6)",
+    "get_directions": "Get directions",
+    "map_title": "Identia Studio location in Mérida, Yucatán"
   },
   "common": {
     "home": "Home",
