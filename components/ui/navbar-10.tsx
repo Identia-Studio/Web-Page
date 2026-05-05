@@ -6,7 +6,6 @@ import { motion } from "motion/react"
 import Image from "next/image";
 import {useTranslations} from 'next-intl';
 import {Link} from '@/i18n/navigation';
-import NextLink from 'next/link'
 import { usePathname } from "next/navigation";
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -81,7 +80,7 @@ export const Navbar10 = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLE
             <Button
               asChild
             >
-              <NextLink href="#contact">
+              <Link href="/contact">
                 <motion.span
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ repeat: Infinity, repeatDelay: 4, duration: .5, ease: "easeInOut"}}
@@ -89,7 +88,7 @@ export const Navbar10 = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLE
                 >
                   {t('contact')}
                 </motion.span>
-              </NextLink>
+              </Link>
             </Button>
           </div>
         </div>

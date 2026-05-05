@@ -6,6 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     'en',
     'es',
+    'en/contact',
+    'es/contacto',
     'en/referrals',
     'en/referrals/terms',
     'es/referidos',
