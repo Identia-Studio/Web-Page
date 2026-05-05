@@ -7,14 +7,22 @@ import { WhatWeDo } from "@/components/sections/home/WhatWeDo"
 import { HowWeWork } from "@/components/sections/home/HowWeWork"
 // import { Testimonials } from "@/components/sections/home/testimonials"
 
-export const metadata: Metadata = {
-  title: 'Identia Studio | Desarrollo Web y Marketing Digital en Mérida',
-  description:
-    'Estudio digital especializado en desarrollo web, SEO y soluciones a la medida para negocios e inmobiliarias en Mérida y México.',
-  alternates: {
-    canonical: '/',
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isEs = locale === 'es';
+  return {
+    title: isEs
+      ? 'Identia Studio | Agencia Digital en Mérida, Yucatán'
+      : 'Identia Studio | Web Development Agency in Mérida, Mexico',
+    description: isEs
+      ? 'Agencia de desarrollo web, apps móviles y diseño UI/UX en Mérida, Yucatán. Construimos productos digitales con IA, rápidos y escalables.'
+      : 'Web development, mobile apps & UI/UX design agency in Mérida, Yucatán, Mexico. We build digital products with AI — fast and scalable.',
+  };
+}
 
 export default function Home() {
   return (

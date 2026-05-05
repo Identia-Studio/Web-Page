@@ -30,11 +30,34 @@ export async function generateMetadata({ params }: GenerateMetadataProps) {
       canonical: `${baseUrl}/${locale}`,
       languages: {
         en: `${baseUrl}/en`,
-        es: `${baseUrl}/es`
-      }
-    }
+        es: `${baseUrl}/es`,
+        'x-default': baseUrl,
+      },
+    },
   };
 }
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['MarketingAgency', 'ProfessionalService'],
+  name: 'Identia Studio',
+  url: 'https://www.identiastudio.com',
+  telephone: '+52 999 544 6000',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Los Héroes',
+    addressLocality: 'Mérida',
+    addressRegion: 'Yucatán',
+    postalCode: '97306',
+    addressCountry: 'MX',
+  },
+  areaServed: { '@type': 'City', name: 'Mérida' },
+  sameAs: [
+    'https://www.linkedin.com/company/identia-studio-mid',
+    'https://instagram.com/identia.studio.mid',
+    'https://www.facebook.com/identia.studio',
+  ],
+};
 
 export default async function LocaleLayout({
   children,
@@ -54,12 +77,15 @@ export default async function LocaleLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" 
-          rel="stylesheet" 
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
         />
         <link rel="icon" href="/favicon.png" sizes="any" />
-
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
       </head>
       <body className="antialiased bg-black text-white">
         <NextIntlClientProvider locale={locale}>
