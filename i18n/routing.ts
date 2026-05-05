@@ -8,6 +8,16 @@ export const routing = defineRouting({
     '/contact': {
       es: '/contacto'
     },
+    // '/web-development': {
+    //   es: '/desarrollo-web-merida'
+    // },
+    // '/mobile-apps': {
+    //   es: '/apps-moviles'
+    // },
+    // '/ux-design': {
+    //   es: '/diseno-ux'
+    // },
+    // '/branding': '/branding',
     '/referrals': {
       es: '/referidos'
     },
