@@ -201,7 +201,122 @@
       "whatsapp": "Escríbenos por WhatsApp",
       "proposal": "Solicitar propuesta",
       "referral": "¡Quiero referir un cliente!",
-      "terms": "Ver los Términos y Políticas del Programa de Referidos"
+      "terms": "Ver los Términos y Políticas del Programa de Referidos",
+      "learn_more": "Ver más"
+    }
+  },
+  "services_pages": {
+    "related_label": "También ofrecemos:",
+    "nav_labels": {
+      "web": "Desarrollo Web",
+      "mobile": "Apps Móviles",
+      "ux": "Diseño UI/UX",
+      "branding": "Branding"
+    },
+    "included_title": "¿Qué incluye",
+    "included_title2": "el servicio?",
+    "why_us_title": "¿Por qué",
+    "why_us_title2": "elegirnos?",
+    "faq_title": "Preguntas frecuentes",
+    "web": {
+      "hero_title": "Desarrollo Web",
+      "hero_title2": "en Mérida, Yucatán",
+      "hero_description": "Construimos sitios web y plataformas digitales para empresas en Mérida, Yucatán y todo México. Desde landing pages de alto impacto hasta sistemas complejos con back-end, nuestro enfoque combina diseño limpio, performance y escalabilidad real.",
+      "hero_long": "Si tu negocio necesita presencia digital profesional, más conversiones o modernizar una plataforma obsoleta, trabajamos contigo para definir el alcance correcto y entregarlo sin rodeos. No vendemos plantillas genéricas ni sitios fabricados en serie: cada proyecto parte de tus objetivos de negocio y termina con código funcionando en producción.",
+      "included": [
+        { "title": "Diseño UI personalizado", "description": "Interfaz diseñada desde cero para tu marca. Sin plantillas: colores, tipografía y componentes alineados a tu identidad visual y objetivos de conversión." },
+        { "title": "Desarrollo Full-Stack", "description": "Front-end y back-end cuando el proyecto lo requiere. APIs REST, bases de datos, autenticación de usuarios y lógica de negocio incluidos." },
+        { "title": "Optimización de rendimiento", "description": "Core Web Vitals en verde. Tiempos de carga menores a 2 segundos en móvil, optimización de imágenes, lazy loading y caché eficiente desde el día uno." },
+        { "title": "SEO técnico base", "description": "Estructura de URLs limpia, metaetiquetas correctas, sitemap XML, robots.txt y datos estructurados JSON-LD configurados antes del lanzamiento." },
+        { "title": "Deploy y lanzamiento", "description": "Puesta en marcha en Vercel, AWS o el proveedor de tu preferencia. Acompañamiento durante el período de lanzamiento incluido sin costo adicional." },
+        { "title": "Responsive y accesible", "description": "Experiencia optimizada en móvil, tablet y desktop. Cumplimos estándares básicos de accesibilidad para que ningún usuario quede fuera." }
+      ],
+      "why_us": [
+        { "title": "Equipo local en Mérida", "description": "Reuniones presenciales posibles. Conocemos el mercado yucateco y cómo los consumidores locales interactúan con plataformas digitales. No trabajas con una agencia anónima en otra ciudad o país." },
+        { "title": "Entregamos producto real", "description": "Código funcionando, documentado y desplegado. Sin entregas a medias, sin excusas de última hora. Si acordamos una fecha, la cumplimos o te avisamos con tiempo suficiente para ajustar." },
+        { "title": "Stack moderno que escala", "description": "Next.js, React, TypeScript y Tailwind. Tecnología actual que crece con tu negocio. Cuando necesites nuevas funcionalidades, no acumulamos deuda técnica ni empezamos de cero." }
+      ],
+      "faq": [
+        { "q": "¿Cuánto cuesta un sitio web en Mérida?", "a": "Depende del alcance. Un sitio informativo de 4-6 páginas parte desde $18,000 MXN. Una plataforma con back-end y funcionalidades especiales puede superar los $60,000 MXN. Agendamos una llamada de diagnóstico gratuita para darte un presupuesto claro y sin compromisos." },
+        { "q": "¿Cuánto tiempo tarda el desarrollo?", "a": "Un sitio de 4-6 páginas tarda entre 2 y 4 semanas. Proyectos con back-end o integraciones complejas pueden tomar de 6 a 12 semanas. Recibirás un calendario con hitos y fechas de entrega desde la primera semana del proyecto." },
+        { "q": "¿Puedo ver el avance mientras se desarrolla?", "a": "Sí. Trabajamos con ambientes de staging donde puedes revisar el avance en tiempo real desde cualquier dispositivo. También hacemos revisiones semanales por videollamada o en persona si prefieres." },
+        { "q": "¿Qué pasa si necesito cambios después del lanzamiento?", "a": "Incluimos un período de soporte post-lanzamiento de 30 días para correcciones menores. Para cambios mayores ofrecemos planes de mantenimiento mensual o cotizamos los ajustes por separado según el alcance." }
+      ]
+    },
+    "mobile": {
+      "hero_title": "Apps Móviles",
+      "hero_title2": "en Mérida, Yucatán",
+      "hero_description": "Desarrollamos aplicaciones iOS y Android para empresas y emprendedores en Mérida y México. Desde MVPs de validación hasta apps de producción con miles de usuarios, construimos con React Native o Flutter para maximizar alcance sin duplicar costos.",
+      "hero_long": "Una app móvil bien hecha puede transformar la relación con tus clientes, automatizar operaciones o abrir un canal de ventas completamente nuevo. Trabajamos desde la idea hasta el App Store con enfoque en retención real de usuarios, no solo en la descarga inicial. Cada decisión técnica parte de lo que tu negocio necesita para crecer.",
+      "included": [
+        { "title": "Diseño nativo por plataforma", "description": "UI/UX adaptado a las guías de diseño de iOS (Human Interface Guidelines) y Android (Material Design). La app se siente correcta y familiar en cada plataforma." },
+        { "title": "Autenticación y perfiles", "description": "Login con email, redes sociales o SSO corporativo. Gestión de perfiles de usuario, roles, permisos y almacenamiento seguro de sesiones y tokens." },
+        { "title": "Integraciones y pagos", "description": "Stripe, MercadoPago, Conekta y otras pasarelas de pago mexicanas. Integraciones con APIs externas, CRMs, ERP y servicios de terceros según el caso." },
+        { "title": "Notificaciones push", "description": "Comunicación proactiva con usuarios a través de notificaciones locales y remotas. Segmentación por comportamiento, preferencias o eventos específicos de la app." },
+        { "title": "Publicación en tiendas", "description": "Gestión del proceso de revisión y publicación en App Store (Apple) y Play Store (Google). Configuración de ASO básico y descripción optimizada para visibilidad inicial." },
+        { "title": "Backend y API propia", "description": "Diseño de la arquitectura back-end cuando el proyecto lo requiere. APIs seguras, documentadas y escalables que soportan el crecimiento de la app sin reconstruir desde cero." }
+      ],
+      "why_us": [
+        { "title": "Equipo local disponible", "description": "Estamos en Mérida. Las reuniones de alineación son posibles en persona. Respondemos rápido y tenemos el contexto del negocio sin necesidad de largos onboardings ni diferencias de zona horaria." },
+        { "title": "MVP rápido y eficiente", "description": "Priorizamos un MVP funcional que valide tu idea antes de escalar. Esto reduce el riesgo financiero y permite ajustes basados en feedback real de usuarios, no en suposiciones del equipo." },
+        { "title": "Código propio, sin dependencias ocultas", "description": "Entregamos el código fuente completo al cierre del proyecto. Nada de builders o plataformas de terceros que cobren mensualmente o te encierren en su ecosistema cuando quieras migrar." }
+      ],
+      "faq": [
+        { "q": "¿Cuánto cuesta desarrollar una app móvil en Mérida?", "a": "Un MVP funcional para iOS y Android parte desde $35,000 MXN con React Native. Apps más complejas con back-end completo y pasarelas de pago pueden superar los $120,000 MXN. Agenda una llamada gratuita para un estimado detallado según tu caso." },
+        { "q": "¿React Native o desarrollo nativo?", "a": "Para la mayoría de proyectos, React Native ofrece la mejor relación calidad-precio: una base de código para iOS y Android con rendimiento cercano al nativo. El desarrollo 100% nativo solo lo recomendamos cuando los requerimientos de performance son extremos o se requiere acceso profundo a hardware específico del dispositivo." },
+        { "q": "¿Cuánto tiempo tarda desarrollar una app?", "a": "Un MVP de 4-6 pantallas puede estar listo en 6-8 semanas. Apps con más funcionalidades o back-end complejo toman entre 3 y 6 meses. La publicación en App Store y Play Store agrega entre 1 y 2 semanas adicionales por los procesos de revisión." },
+        { "q": "¿Incluyen mantenimiento después del lanzamiento?", "a": "Sí. Incluimos 30 días de soporte post-lanzamiento para correcciones críticas. También ofrecemos planes de mantenimiento mensual para actualizaciones de sistema operativo, corrección de bugs y nuevas versiones de la app conforme el negocio evoluciona." }
+      ]
+    },
+    "ux": {
+      "hero_title": "Diseño UI/UX",
+      "hero_title2": "en Mérida, Yucatán",
+      "hero_description": "Diseñamos interfaces y experiencias digitales para empresas en Mérida y todo México. Desde la investigación de usuarios hasta el prototipo navegable listo para desarrollo, creamos productos que se sienten intuitivos, se ven profesionales y convierten mejor.",
+      "hero_long": "El diseño no es solo estética: es la diferencia entre un usuario que completa una compra y uno que abandona el carrito. Trabajamos con metodologías centradas en el usuario para entender realmente cómo piensan y actúan tus clientes, y construimos interfaces basadas en esos insights, no en preferencias personales del equipo de diseño.",
+      "included": [
+        { "title": "Investigación de usuarios", "description": "Entrevistas, análisis de comportamiento y revisión heurística para entender a fondo quiénes son tus usuarios, qué necesitan y dónde fallan los flujos actuales del producto." },
+        { "title": "Arquitectura de información", "description": "Estructura de navegación, jerarquía de contenido y flujos principales. La base lógica que hace que los usuarios siempre sepan dónde están y adónde pueden ir." },
+        { "title": "Wireframes y prototipos", "description": "Prototipos navegables en Figma que permiten validar la experiencia antes de escribir una sola línea de código. Iteramos rápido y barato, cuando los cambios cuestan menos." },
+        { "title": "Diseño visual (UI)", "description": "Sistema visual completo: paleta de colores, tipografía, iconografía, componentes y patrones de diseño consistentes en todas las pantallas, dispositivos y puntos de contacto." },
+        { "title": "Sistema de componentes", "description": "Librería de componentes reutilizables lista para el equipo de desarrollo. Reduce el tiempo de implementación, garantiza consistencia visual y facilita futuras iteraciones del producto." },
+        { "title": "Handoff para desarrollo", "description": "Especificaciones técnicas, assets exportados en los formatos correctos y documentación clara para que desarrollo implemente el diseño fielmente sin interpretar ni improvisar." }
+      ],
+      "why_us": [
+        { "title": "Diseño basado en datos", "description": "Nuestras decisiones de diseño se basan en investigación de usuarios, pruebas y métricas, no en preferencias personales. Diseñamos lo que funciona para tus usuarios específicos." },
+        { "title": "Enfoque en conversión", "description": "Diseñamos con los objetivos de negocio siempre presentes. Cada decisión de UX — un botón, un formulario, un flujo — está pensada para llevar al usuario al resultado que tu negocio necesita." },
+        { "title": "Colaboración continua", "description": "Revisiones semanales, comentarios en tiempo real en Figma y total transparencia del proceso desde el día uno hasta el handoff final con el equipo de desarrollo." }
+      ],
+      "faq": [
+        { "q": "¿Qué entregables recibo al final del proyecto?", "a": "Archivo de Figma con todos los diseños organizados por pantalla y flujo, sistema de componentes documentado, assets exportados en los formatos necesarios y una guía de estilo resumida. Todo listo para que cualquier desarrollador implemente sin ambigüedades." },
+        { "q": "¿Necesito tener claro lo que quiero antes de empezar?", "a": "No es necesario. El proceso de discovery y wireframing está diseñado para ayudarte a clarificar qué necesitas. Muchos clientes llegan con una idea general y juntos definimos los flujos, pantallas prioritarias y el alcance correcto." },
+        { "q": "¿Pueden diseñar para mi aplicación existente?", "a": "Sí. Podemos hacer un redesign parcial o total de un producto existente. Empezamos con una revisión heurística para identificar los problemas más críticos y priorizar mejoras con mayor impacto en conversión y retención." },
+        { "q": "¿El diseño incluye móvil y desktop?", "a": "Sí. Por defecto diseñamos en responsive: las pantallas se adaptan a móvil, tablet y desktop. Si el proyecto es exclusivamente web o exclusivamente móvil, ajustamos el alcance y el presupuesto en consecuencia desde el inicio." }
+      ]
+    },
+    "branding": {
+      "hero_title": "Branding e Identidad",
+      "hero_title2": "en Mérida, Yucatán",
+      "hero_description": "Construimos identidades visuales consistentes para marcas en Mérida, Yucatán y México. No vendemos logotipos aislados: construimos sistemas visuales completos que funcionan en web, app, redes sociales, impresión y cualquier punto de contacto de tu marca.",
+      "hero_long": "Una marca sólida no es solo un logotipo bonito. Es la suma de cómo se ve, cómo se comunica y cómo hace sentir a tus clientes en cada interacción. En Identia Studio entendemos el branding como estrategia, no como decoración — y eso se refleja en decisiones de diseño que tienen un porqué de negocio detrás de cada pixel.",
+      "included": [
+        { "title": "Estrategia de marca", "description": "Posicionamiento, propuesta de valor, personalidad y tono de comunicación. La base estratégica que guía cada decisión visual antes de crear un solo elemento gráfico." },
+        { "title": "Logotipo y variantes", "description": "Diseño del símbolo o logotipo principal más todas las variantes necesarias: horizontal, vertical, positivo, negativo, monocromo y versión adaptada para favicon y app icon." },
+        { "title": "Sistema de color", "description": "Paleta de colores primarios, secundarios y neutros con especificaciones exactas para impresión (CMYK/Pantone) y pantalla (HEX, RGB), garantizando consistencia en todos los medios." },
+        { "title": "Tipografía", "description": "Selección y pairing de tipografías para encabezados, cuerpo de texto y uso especial. Guía con jerarquía tipográfica clara y especificaciones de tamaño para cada contexto." },
+        { "title": "Iconografía y elementos gráficos", "description": "Set de íconos y patrones visuales alineados con el estilo de la marca para uso en plataformas digitales, presentaciones y materiales de marketing." },
+        { "title": "Brand guidelines", "description": "Manual de identidad digital que documenta cómo usar correctamente cada elemento visual. Incluye usos correctos e incorrectos, espaciado mínimo y reglas de aplicación en diferentes fondos." }
+      ],
+      "why_us": [
+        { "title": "Branding pensado para digital", "description": "Diseñamos pensando en todos los canales donde tu marca va a vivir: web, app, redes sociales, correo, impresión. El resultado es una identidad que funciona en cualquier contexto, no solo en un PDF." },
+        { "title": "Estrategia antes de estética", "description": "Antes de diseñar una sola fuente, entendemos tu negocio, tu mercado, tu competencia y tu cliente ideal en Mérida y México. Cada decisión de diseño tiene un porqué de negocio detrás." },
+        { "title": "Conexión directa con desarrollo", "description": "Si tu próximo paso es construir un sitio o app, el sistema visual queda listo para pasarse a producción sin fricciones. Un mismo equipo de diseño y desarrollo garantiza fidelidad total." }
+      ],
+      "faq": [
+        { "q": "¿Cuánto tiempo toma un proyecto de branding?", "a": "El proceso completo — estrategia, logotipo, sistema visual y brand guidelines — toma entre 3 y 6 semanas dependiendo de la complejidad y la velocidad de retroalimentación del cliente. Proyectos que requieren investigación de mercado más profunda pueden extenderse hasta 8 semanas." },
+        { "q": "¿Entrego solo el logo o el sistema completo?", "a": "Siempre recomendamos el sistema completo porque un logotipo sin guía de uso termina siendo aplicado inconsistentemente y pierde impacto. Si el presupuesto es limitado podemos hacer un paquete enfocado con los elementos esenciales para comenzar." },
+        { "q": "¿Los archivos son míos al terminar el proyecto?", "a": "Sí, al 100%. Al cerrar el proyecto recibes todos los archivos fuente en AI, EPS, SVG, PDF y PNG en alta y baja resolución. Las fuentes tipográficas se incluyen si son de uso libre. Tu marca te pertenece completamente." },
+        { "q": "¿Pueden hacer rebrand de una marca existente?", "a": "Sí. Trabajamos tanto en creación desde cero como en evolución de marcas existentes. Para rebrand, analizamos qué elementos de la identidad actual vale la pena conservar por reconocimiento de marca y cuáles necesitan actualización para alcanzar los objetivos actuales del negocio." }
+      ]
     }
   }
 }
