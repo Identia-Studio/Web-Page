@@ -4,8 +4,8 @@ import { sendGTMEvent } from '@next/third-parties/google'
 import { motion, Variants } from "motion/react"
 import AnimatedServices from "./services/animated-services";
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { Button } from "@/components/ui/button";
 import WhatsappIcon from "@/components/icons/whatsapp_icon";
 import { Capabilities } from "./services/capabilities";
@@ -19,8 +19,9 @@ import branding from '@/assets/images/services/branding.png'
 interface Service {
   title: string;
   description: string;
-  image: StaticImageData,
+  image: StaticImageData;
   features: string[];
+  href: '/web-development' | '/mobile-apps' | '/ux-design' | '/branding';
 }
 
 const container: Variants = {
@@ -49,25 +50,29 @@ export function WhatWeDo() {
       title: t('services.web.title'),
       description: t('services.web.description'),
       features: t.raw('services.web.features'),
-      image: desarrollo
+      image: desarrollo,
+      href: '/web-development',
     },
     {
       title: t('services.mobile_app.title'),
       description: t('services.mobile_app.description'),
       features: t.raw('services.mobile_app.features'),
-      image: apps
+      image: apps,
+      href: '/mobile-apps',
     },
     {
       title: t('services.ui_design.title'),
       description: t('services.ui_design.description'),
       features: t.raw('services.ui_design.features'),
       image: ui,
+      href: '/ux-design',
     },
     {
       title: t('services.branding.title'),
       description: t('services.branding.description'),
       features: t.raw('services.branding.features'),
       image: branding,
+      href: '/branding',
     },
   ]
 
@@ -149,15 +154,21 @@ export function WhatWeDo() {
                   viewport={{ once: true }}
                   className="flex flex-col lg:flex-row gap-4">
                   <Button asChild>
-                    <Link href="#contact">
+                    <Link href="/contact">
                       {commonT('cta.proposal')}
                     </Link>
                   </Button>
 
                   <Button variant="outline" asChild onClick={() => {handleGTMClick(service)}}>
-                    <Link href={`https://api.whatsapp.com/send?phone=529995446000&text=Hola%2C+me+gustar%C3%ADa+cotizar+un+servicio+de+${service.title.replace(/\s/, '+')}`} target="_blank">
+                    <a href={`https://api.whatsapp.com/send?phone=529995446000&text=Hola%2C+me+gustar%C3%ADa+cotizar+un+servicio+de+${service.title.replace(/\s/, '+')}`} target="_blank" rel="noopener noreferrer">
                       {commonT('cta.whatsapp')}
                       <WhatsappIcon />
+                    </a>
+                  </Button>
+
+                  <Button variant="ghost" asChild>
+                    <Link href={service.href}>
+                      {commonT('cta.learn_more')}
                     </Link>
                   </Button>
                 </motion.div>

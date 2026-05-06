@@ -201,7 +201,122 @@
       "whatsapp": "Message us on WhatsApp",
       "proposal": "Request a proposal",
       "referral": "I want to refer a client!",
-      "terms": "View Referral Program Terms and Policies"
+      "terms": "View Referral Program Terms and Policies",
+      "learn_more": "Learn more"
+    }
+  },
+  "services_pages": {
+    "related_label": "We also offer:",
+    "nav_labels": {
+      "web": "Web Development",
+      "mobile": "Mobile Apps",
+      "ux": "UI/UX Design",
+      "branding": "Branding"
+    },
+    "included_title": "What's",
+    "included_title2": "included?",
+    "why_us_title": "Why",
+    "why_us_title2": "choose us?",
+    "faq_title": "Frequently asked questions",
+    "web": {
+      "hero_title": "Web Development",
+      "hero_title2": "in Mérida, Yucatán",
+      "hero_description": "We build websites and digital platforms for businesses in Mérida, Yucatán, and across Mexico. From high-impact landing pages to complex back-end systems, our approach combines clean design, real performance, and scalability.",
+      "hero_long": "Whether your business needs a professional digital presence, better conversion rates, or a modernized platform, we work with you to define the right scope and deliver it without excuses. No generic templates, no assembly-line sites — every project starts from your business goals and ends with working code in production.",
+      "included": [
+        { "title": "Custom UI design", "description": "Interface designed from scratch for your brand. No templates: colors, typography, and components aligned with your visual identity and optimized for conversion." },
+        { "title": "Full-Stack development", "description": "Front-end and back-end when the project requires it. REST APIs, databases, user authentication, and business logic all included." },
+        { "title": "Performance optimization", "description": "Green Core Web Vitals. Load times under 2 seconds on mobile, image optimization, lazy loading, and efficient caching from day one." },
+        { "title": "Technical SEO foundation", "description": "Clean URL structure, proper meta tags, XML sitemap, robots.txt, and JSON-LD structured data configured before launch." },
+        { "title": "Deploy and launch", "description": "Launch on Vercel, AWS, or your preferred provider. Launch period support included at no additional cost." },
+        { "title": "Responsive and accessible", "description": "Optimized experience on mobile, tablet, and desktop. We meet baseline accessibility standards to ensure no user is left behind." }
+      ],
+      "why_us": [
+        { "title": "Local team in Mérida", "description": "In-person meetings are possible. We understand the Yucatán market and how local consumers interact with digital platforms. You're not working with an anonymous agency in another city." },
+        { "title": "We deliver real product", "description": "Working, documented, deployed code. No half-deliveries, no last-minute excuses. If we agreed on a date, we hit it — or we give you enough notice to adjust." },
+        { "title": "Modern stack that scales", "description": "Next.js, React, TypeScript, and Tailwind. Current technology that grows with your business. When you need new features, we don't start from scratch or accumulate technical debt." }
+      ],
+      "faq": [
+        { "q": "How much does a website cost in Mérida?", "a": "It depends on scope. A 4-6 page informational site starts around $900 USD. A platform with back-end and custom features can exceed $3,000 USD. We schedule a free diagnostic call to give you a clear, no-commitment estimate." },
+        { "q": "How long does development take?", "a": "A 4-6 page site takes 2 to 4 weeks. Projects with back-end or complex integrations can take 6 to 12 weeks. You'll receive a detailed milestone calendar from the first week of the project." },
+        { "q": "Can I see progress during development?", "a": "Yes. We work with staging environments where you can review progress in real time from any device. We also run weekly reviews via video call or in person if you prefer." },
+        { "q": "What happens if I need changes after launch?", "a": "The service includes a 30-day post-launch support period for minor corrections. For larger changes we offer monthly maintenance plans or quote adjustments based on scope." }
+      ]
+    },
+    "mobile": {
+      "hero_title": "Mobile Apps",
+      "hero_title2": "in Mérida, Yucatán",
+      "hero_description": "We develop iOS and Android applications for businesses and entrepreneurs in Mérida and Mexico. From validation MVPs to production apps with thousands of users, we build with React Native or Flutter to maximize reach without duplicating costs.",
+      "hero_long": "A well-built mobile app can transform your relationship with customers, automate operations, or open an entirely new sales channel. We work from the idea to the App Store with a focus on real user retention, not just initial downloads. Every technical decision starts from what your business needs to grow.",
+      "included": [
+        { "title": "Native design per platform", "description": "UI/UX adapted to iOS (Human Interface Guidelines) and Android (Material Design) design guides. The app feels correct and familiar on each platform." },
+        { "title": "Authentication and profiles", "description": "Login with email, social networks, or corporate SSO. User profile management, roles, permissions, and secure session and token storage." },
+        { "title": "Integrations and payments", "description": "Stripe, MercadoPago, and other payment gateways. Integrations with external APIs, CRMs, ERPs, and third-party services as needed." },
+        { "title": "Push notifications", "description": "Proactive user communication through local and remote notifications. Segmentation by behavior, preferences, or specific in-app events." },
+        { "title": "Store publishing", "description": "Managing the review and publishing process on App Store (Apple) and Play Store (Google). Basic ASO setup and optimized descriptions for initial visibility." },
+        { "title": "Backend and custom API", "description": "Back-end architecture design when the project requires it. Secure, documented, scalable APIs that support app growth without rebuilding from scratch." }
+      ],
+      "why_us": [
+        { "title": "Local team available", "description": "We're in Mérida. Alignment meetings are possible in person. We respond quickly and have business context without lengthy onboardings or time zone differences." },
+        { "title": "Fast, efficient MVP", "description": "We prioritize a functional MVP that validates your idea before scaling. This reduces financial risk and allows adjustments based on real user feedback, not team assumptions." },
+        { "title": "Your code, no hidden dependencies", "description": "We deliver the full source code at project close. No builders or third-party platforms that charge monthly or lock you in when you want to migrate." }
+      ],
+      "faq": [
+        { "q": "How much does mobile app development cost in Mérida?", "a": "A functional iOS and Android MVP starts around $1,700 USD with React Native. More complex apps with full back-end and payment gateways can exceed $6,000 USD. Schedule a free call for a detailed estimate." },
+        { "q": "React Native or native development?", "a": "For most projects, React Native offers the best quality-to-cost ratio: one codebase for iOS and Android with near-native performance. 100% native is only recommended when extreme performance requirements or deep device hardware access is needed." },
+        { "q": "How long does app development take?", "a": "A 4-6 screen MVP can be ready in 6-8 weeks. Apps with more features or full back-end take 3 to 6 months. Publishing on App Store and Play Store adds 1-2 weeks for Apple and Google's review processes." },
+        { "q": "Is maintenance included after launch?", "a": "Yes. We include 30 days of post-launch support for critical fixes. We also offer monthly maintenance plans for OS updates, bug fixes, and new app versions as the business evolves." }
+      ]
+    },
+    "ux": {
+      "hero_title": "UI/UX Design",
+      "hero_title2": "in Mérida, Yucatán",
+      "hero_description": "We design digital interfaces and experiences for businesses in Mérida and across Mexico. From user research to a navigable prototype ready for development, we create products that feel intuitive, look professional, and convert better.",
+      "hero_long": "Design is not just aesthetics — it's the difference between a user who completes a purchase and one who abandons the cart. We work with user-centered methodologies to genuinely understand how your customers think and act, and we build interfaces based on those insights, not on the design team's personal preferences.",
+      "included": [
+        { "title": "User research", "description": "Interviews, behavior analysis, and heuristic review to deeply understand who your users are, what they need, and where current product flows are failing them." },
+        { "title": "Information architecture", "description": "Navigation structure, content hierarchy, and main flow definition. The logical foundation that ensures users always know where they are and where they can go." },
+        { "title": "Wireframes and prototypes", "description": "Navigable Figma prototypes that let you validate the experience before writing a single line of code. We iterate fast and cheaply, when changes cost less." },
+        { "title": "Visual design (UI)", "description": "Complete visual system: color palette, typography, iconography, components, and design patterns consistent across all screens, devices, and touchpoints." },
+        { "title": "Component system", "description": "Reusable component library ready for the development team. Reduces implementation time, ensures visual consistency, and facilitates future product iterations." },
+        { "title": "Development handoff", "description": "Technical specifications, assets exported in the right formats, and clear documentation so development implements the design faithfully without guessing." }
+      ],
+      "why_us": [
+        { "title": "Data-driven design", "description": "Our design decisions are based on user research, testing, and metrics — not personal preferences. We design what works for your specific users." },
+        { "title": "Conversion-focused", "description": "We design with business goals always in mind. Every UX decision — a button, a form, a flow — is designed to move the user toward the outcome your business needs." },
+        { "title": "Continuous collaboration", "description": "Weekly reviews, real-time comments in Figma, and full process transparency from day one through final handoff to the development team." }
+      ],
+      "faq": [
+        { "q": "What deliverables do I receive at the end?", "a": "Figma file with all designs organized by screen and flow, documented component system, assets exported in the necessary formats, and a summarized style guide. Everything ready for any developer to implement without ambiguity." },
+        { "q": "Do I need to know what I want before starting?", "a": "Not at all. The discovery and wireframing process is designed precisely to help you clarify what you need. Many clients come in with a general idea, and together we define the priority flows, screens, and correct scope." },
+        { "q": "Can you redesign my existing application?", "a": "Yes. We can do a partial or full redesign of an existing product. We start with a heuristic review to identify the most critical problems and prioritize improvements with the greatest impact on conversion and retention." },
+        { "q": "Does the design include mobile and desktop?", "a": "Yes. By default we design responsively — screens adapt correctly to mobile, tablet, and desktop. If the project is exclusively web or mobile, we adjust scope and pricing accordingly from the start." }
+      ]
+    },
+    "branding": {
+      "hero_title": "Branding & Identity",
+      "hero_title2": "in Mérida, Yucatán",
+      "hero_description": "We build consistent visual identities for brands in Mérida, Yucatán, and Mexico. We don't sell isolated logos — we build complete visual systems that work across web, app, social media, print, and every brand touchpoint.",
+      "hero_long": "A strong brand is not just a nice logo. It's the sum of how it looks, how it communicates, and how it makes customers feel at every interaction. At Identia Studio we understand branding as strategy, not decoration — and that shows in design decisions that have a business reason behind every pixel.",
+      "included": [
+        { "title": "Brand strategy", "description": "Positioning, value proposition, brand personality, and tone of voice definition. The strategic foundation that guides every visual decision before creating a single graphic element." },
+        { "title": "Logo and variants", "description": "Design of the main symbol or logotype plus all necessary variants: horizontal, vertical, positive, negative, monochrome, and adapted version for favicon and app icon." },
+        { "title": "Color system", "description": "Primary, secondary, and neutral color palette with exact specifications for print (CMYK/Pantone) and screen (HEX, RGB), ensuring consistency across all media." },
+        { "title": "Typography", "description": "Selection and pairing of typefaces for headings, body text, and special use. Usage guide with clear typographic hierarchy and size specifications for each context." },
+        { "title": "Iconography and graphic elements", "description": "Set of icons and visual patterns aligned with the brand style for use in digital platforms, presentations, and marketing materials." },
+        { "title": "Brand guidelines", "description": "Digital identity manual documenting how to correctly use each visual element. Includes correct and incorrect uses, minimum spacing, and application rules across different backgrounds." }
+      ],
+      "why_us": [
+        { "title": "Branding built for digital", "description": "We design thinking about all the channels where your brand will live: website, app, social media, email, print. The result is an identity that works in any context, not just a PDF." },
+        { "title": "Strategy before aesthetics", "description": "Before designing a single typeface, we understand your business, market, competition, and ideal customer in Mérida and Mexico. Every design decision has a business reason behind it." },
+        { "title": "Direct connection to development", "description": "If your next step is building a site or app, the visual system is ready to go straight to production. One design-and-development team guarantees complete fidelity." }
+      ],
+      "faq": [
+        { "q": "How long does a branding project take?", "a": "The complete process — strategy, logo, visual system, and brand guidelines — takes 3 to 6 weeks depending on complexity and client feedback speed. Projects requiring deeper market research can extend to 8 weeks." },
+        { "q": "Do I get just the logo or the complete system?", "a": "We always recommend the complete system because a logo without a usage guide ends up applied inconsistently and loses impact. If budget is limited we can create a focused package with the essential elements to get started." },
+        { "q": "Do I own the files when the project ends?", "a": "Yes, 100%. At project close you receive all source files in AI, EPS, SVG, PDF, and PNG in high and low resolution. Typefaces are included if they're free to use. Your brand belongs entirely to you." },
+        { "q": "Can you rebrand an existing brand?", "a": "Yes. We work on both creation from scratch and evolution of existing brands. For rebrands, we analyze which current identity elements are worth preserving for brand recognition and which need updating to meet current business objectives." }
+      ]
     }
   }
 }
