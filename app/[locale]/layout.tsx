@@ -6,6 +6,7 @@ import BaseLayout from "@/components/layout/base_layout";
 import Image from "next/image";
 import { GoogleAnalytics, GoogleTagManager  } from '@next/third-parties/google'
 import MsClarity from "@/components/3rdparty/MsClarity";
+import { Analytics } from '@vercel/analytics/next';
 
 interface GenerateMetadataProps {
   params: Promise<{ locale: string }>
@@ -122,6 +123,7 @@ export default async function LocaleLayout({
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GT_ID!} />
         <MsClarity />
+        <Analytics />
       </body>
     </html>
   );
