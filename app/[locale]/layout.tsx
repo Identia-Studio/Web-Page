@@ -5,6 +5,9 @@ import "../globals.css"
 import BaseLayout from "@/components/layout/base_layout";
 import Image from "next/image";
 import { GoogleAnalytics, GoogleTagManager  } from '@next/third-parties/google'
+import Clarity from '@microsoft/clarity';
+
+Clarity.init(process.env.NEXT_PUBLIC_CLARITY_ID!);
 
 interface GenerateMetadataProps {
   params: Promise<{ locale: string }>
