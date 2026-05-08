@@ -5,9 +5,7 @@ import "../globals.css"
 import BaseLayout from "@/components/layout/base_layout";
 import Image from "next/image";
 import { GoogleAnalytics, GoogleTagManager  } from '@next/third-parties/google'
-import Clarity from '@microsoft/clarity';
-
-Clarity.init(process.env.NEXT_PUBLIC_CLARITY_ID!);
+import MsClarity from "@/components/3rdparty/MsClarity";
 
 interface GenerateMetadataProps {
   params: Promise<{ locale: string }>
@@ -123,6 +121,7 @@ export default async function LocaleLayout({
         {/* <!-- End Meta Pixel Code --> */}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GT_ID!} />
+        <MsClarity />
       </body>
     </html>
   );
