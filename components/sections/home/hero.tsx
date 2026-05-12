@@ -85,6 +85,7 @@ export function Hero() {
               width={640}
               height={640}
               sizes="(max-width: 768px) 320px"
+              priority
             />
           </motion.div>
           <motion.div
@@ -100,6 +101,7 @@ export function Hero() {
               width={500}
               height={500}
               sizes="(max-width: 768px) 300px"
+              priority
             />
           </motion.div>
         </motion.div>

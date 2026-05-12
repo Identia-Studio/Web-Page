@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/home/hero"
-// import { FeaturedWork } from "@/components/sections/home/featured-work"
-// import { AboutUs } from "@/components/sections/home/AboutUs"
-import { Portfolio } from "@/components/sections/home/Portfolio"
-import { WhatWeDo } from "@/components/sections/home/WhatWeDo"
-import { HowWeWork } from "@/components/sections/home/HowWeWork"
-// import { Testimonials } from "@/components/sections/home/testimonials"
+
+const WhatWeDo = dynamic(() => import('@/components/sections/home/WhatWeDo').then(m => ({ default: m.WhatWeDo })))
+const HowWeWork = dynamic(() => import('@/components/sections/home/HowWeWork').then(m => ({ default: m.HowWeWork })))
+const Portfolio = dynamic(() => import('@/components/sections/home/Portfolio').then(m => ({ default: m.Portfolio })))
 
 export async function generateMetadata({
   params,
@@ -27,7 +26,6 @@ export async function generateMetadata({
 export default function Home() {
   return (
     <>
-      {/* <AboutUs /> */}
       <Hero />
       <WhatWeDo />
       <HowWeWork />
