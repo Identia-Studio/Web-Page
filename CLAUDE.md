@@ -64,4 +64,5 @@ components/
 ```
 NEXT_PUBLIC_GA_ID   # Google Analytics measurement ID
 NEXT_PUBLIC_GT_ID   # Google Tag Manager container ID
+
 ```

@@ -5,8 +5,23 @@ import "../globals.css"
 import BaseLayout from "@/components/layout/base_layout";
 import Image from "next/image";
 import { GoogleAnalytics, GoogleTagManager  } from '@next/third-parties/google'
-import MsClarity from "@/components/3rdparty/MsClarity";
 import { Analytics } from '@vercel/analytics/next';
+import { Poppins, Montserrat } from 'next/font/google';
+import MsClarity from "@/components/3rdparty/MsClarity";
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
+  display: 'swap',
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-montserrat',
+  display: 'swap',
+})
 
 interface GenerateMetadataProps {
   params: Promise<{ locale: string }>
@@ -14,18 +29,29 @@ interface GenerateMetadataProps {
 
 export async function generateMetadata({ params }: GenerateMetadataProps) {
   const { locale } = await params;
+  const isEs = locale === 'es';
 
   const baseUrl = 'https://www.identiastudio.com';
 
   return {
-    title: "Identia Studio - Más que desarrollo: identidad digital.",
-    description: "We create beautiful, modern web experiences that help your business grow. From design to development, we bring your vision to life.",
+    title: isEs
+      ? 'Identia Studio | Agencia Digital en Mérida, Yucatán'
+      : 'Identia Studio | Web Development Agency in Mérida, Mexico',
+    description: isEs
+      ? 'Agencia de desarrollo web, apps móviles y diseño UI/UX en Mérida, Yucatán. Construimos productos digitales con IA, rápidos y escalables.'
+      : 'Web development, mobile apps & UI/UX design agency in Mérida, Yucatán, Mexico. We build digital products with AI — fast and scalable.',
     openGraph: {
       title: 'Identia Studio',
-      description: 'Desarrollo web y soluciones digitales a la medida.',
-      url: baseUrl,
+      description: isEs ? 'Desarrollo web y soluciones digitales a la medida.' : 'Custom web development and digital solutions.',
+      url: `${baseUrl}/${locale}`,
       siteName: 'Identia Studio',
       type: 'website',
+      locale: isEs ? 'es_MX' : 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Identia Studio',
+      description: isEs ? 'Desarrollo web y soluciones digitales a la medida.' : 'Custom web development and digital solutions.',
     },
     metadataBase: new URL(baseUrl),
     alternates: {
@@ -81,14 +107,8 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale} className="dark">
+    <html lang={locale} className={`dark ${poppins.variable} ${montserrat.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
         <link rel="icon" href="/favicon.png" sizes="any" />
         <script
           type="application/ld+json"
@@ -102,7 +122,7 @@ export default async function LocaleLayout({
           </BaseLayout>
         </NextIntlClientProvider>
 
-        <Script id="facebook-pixel" strategy="afterInteractive">
+        <Script id="facebook-pixel" strategy="lazyOnload">
         {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
